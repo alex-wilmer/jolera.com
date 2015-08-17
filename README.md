@@ -1,3 +1,3 @@
-# jolera.com
+# react webpack starter
 
 uses webpack + React
