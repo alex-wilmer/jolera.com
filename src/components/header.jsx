@@ -4,11 +4,11 @@ import style from '../style/style.jsx'
 class Header {
   render () {
     return (
-      <header style={ style.header }>
+      <div style={ style.header }>
         <div style={ style.max }>
-          Header yo!
+          jolera.com
         </div>
-      </header>
+      </div>
     )
   }
 }
