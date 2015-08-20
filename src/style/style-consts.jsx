@@ -8,6 +8,7 @@ const consts = {
 , BLACK: `#171717`
 , BLUE: `#0A417E`
 , ORANGE: `#F6722A`
+, GREY: `#F5F5F5`
 }
 
 export default consts

@@ -1,5 +1,6 @@
 import React from 'react'
 import style from '../style/style.jsx'
+import consts from '../style/style-consts.jsx'
 import 'babel-core/polyfill'
 
 class Home {
@@ -8,8 +9,11 @@ class Home {
       backgroundImage: `url(img/bg1.png)`
     , backgroundSize: `cover`
     , backgroundPosition: `center center`
-    , height: `100%`
-    , marginBottom: `300px`
+    , height: `calc(100% - 60px)`
+    }
+
+    const marginBottom = {
+      marginBottom: `300px`
     }
 
     const slogan = {
@@ -19,14 +23,24 @@ class Home {
     , color: `white`
     }
 
-    style.max = Object.assign({}, style.max, { height: `100%` })
+    const grey = {
+      background: consts.GREY
+    }
 
     return (
-      <div style={ backgroundImage }>
-        <div style={ style.max }>
-          <div style={ slogan }>
-            It's all about the ultimate service experience,
-            Jolera's relentless pursuit of your satisfation
+      <div style={ marginBottom }>
+        <div style={ backgroundImage }>
+          <div style={ style.max }>
+            <div style={ slogan }>
+              It's all about the ultimate service experience,
+              Jolera's relentless pursuit of your satisfation
+            </div>
+          </div>
+        </div>
+
+        <div style={ grey }>
+          <div style={ style.max }>
+            test stuff
           </div>
         </div>
       </div>

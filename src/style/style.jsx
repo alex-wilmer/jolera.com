@@ -16,7 +16,9 @@ const footer = {
 , bottom: `0`
 , width: `100%`
 , height: consts.FOOTER_HEIGHT
+, padding: consts.SPACING
 , backgroundColor: consts.BLACK
+, color: `white`
 , zIndex: -1
 }
 
