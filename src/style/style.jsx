@@ -2,8 +2,21 @@ import 'babel-core/polyfill'
 import consts from './style-consts.jsx'
 import mixins from './style-mixins.jsx'
 
-const header = Object.assign({},
-  { backgroundColor: consts.BLUE, color: `white`, padding: `0 20px` }
+const max = { maxWidth: `${ consts.MAX_WIDTH }px`, margin: `0 auto` }
+
+const header = Object.assign({}, {
+    backgroundColor: consts.BLUE
+  , color: `white`
+  , padding: `0 ${ consts.SPACING }px`
+  }
 , mixins.trueHeight(consts.HEADER_HEIGHT))
 
-export default { header, max: Object.assign({}, mixins.max) }
+const footer = {
+  position: `fixed`
+, bottom: `0`
+, width: `100%`
+, height: consts.FOOTER_HEIGHT
+, backgroundColor: consts.BLACK
+}
+
+export default { max, header, footer }
