@@ -17,6 +17,7 @@ const footer = {
 , width: `100%`
 , height: consts.FOOTER_HEIGHT
 , backgroundColor: consts.BLACK
+, zIndex: -1
 }
 
 export default { max, header, footer }
