@@ -14,10 +14,12 @@ class LinksList {
       }
     }
 
-    const links = this.props.links.map((link, i) => {
-      if (i) style.links = Object.assign({}, style.links, { marginLeft: `20px` })
-      return <Link to='/' style={ style.links }>{ link.name }</Link>
-    })
+    const links = this.props.wide
+      ? this.props.links.map((link, i) => {
+          if (i) style.links = Object.assign({}, style.links, { marginLeft: `20px` })
+          return <Link to='/' style={ style.links }>{ link.name }</Link>
+        })
+      : <a>&nbsp;<i className='fa fa-navicon' /></a>
 
     return <span style={ style.list }>{ links }</span>
   }

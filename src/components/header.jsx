@@ -9,7 +9,7 @@ class Header {
       <div style={ style.header }>
         <div style={ style.max }>
           <span>jolera.com</span>
-          <LinksList links={ this.props.links } />
+          <LinksList links={ this.props.links } wide={ this.props.wide } />
         </div>
       </div>
     )

@@ -6,11 +6,30 @@ import Header from './components/header.jsx'
 import Footer from './components/footer.jsx'
 import Home from './components/home.jsx'
 
-class App {
+class App extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = { wide: `` }
+
+    this.componentDidMount = this.componentDidMount.bind(this)
+    this.mediaQueryChanged = this.mediaQueryChanged.bind(this)
+  }
+
+  componentDidMount () {
+    const mql = matchMedia(`(min-width: 800px)`)
+    mql.addListener(this.mediaQueryChanged)
+    this.setState({ mql, wide: mql.matches })
+  }
+
+  mediaQueryChanged () {
+    this.setState({ wide: this.state.mql.matches })
+  }
+
   render () {
     return (
       <div id='app'>
-        <Header links={ this.props.data.links } />
+        <Header links={ this.props.data.links } wide={ this.state.wide } />
         <RouteHandler />
         <Footer />
       </div>
