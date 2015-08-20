@@ -1,6 +1,5 @@
 import React from 'react'
-import Router from 'react-router'
-import { Route, RouteHandler } from 'react-router'
+import Router, { Route, RouteHandler } from 'react-router'
 
 import Header from './components/header.jsx'
 import Footer from './components/footer.jsx'
@@ -55,5 +54,5 @@ Router.run(routes, Root => {
     ]
   }
 
-  React.render(<Root data={ data }/>, document.body)
+  React.render(<Root data={ data } />, document.body)
 })

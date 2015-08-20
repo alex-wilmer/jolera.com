@@ -1,5 +1,6 @@
-# react webpack starter
+# jolera.com
 
-uses webpack + React
+    npm install
+    npm start
 
-    npm install && webpack --watch
+Then navigate to `http://localhost:3000/`
