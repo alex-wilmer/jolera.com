@@ -2,7 +2,11 @@ import React from 'react'
 import style from '../style/style.jsx'
 import consts from '../style/style-consts.jsx'
 import 'babel-core/polyfill'
-import HomeTile from './home-tile.jsx'
+// components
+import HomeTiles from './home-tiles.jsx'
+import WhichOneAreYou from './which-one-are-you.jsx'
+import OurServices from './our-services.jsx'
+import OurPartnerships from './our-partnerships.jsx'
 
 class Home {
   render () {
@@ -18,22 +22,12 @@ class Home {
       marginBottom: `300px`
     }
 
-    style.slogan = {
+    const sloganStyle = {
       position: `absolute`
     , bottom: `100px`
     , color: `white`
     , big: { fontSize: `2em` }
     , small: { fontSize: `1.2em`, paddingTop: consts.SPACING }
-    }
-
-    style.homeTilesWrapper = {
-      width: `270px`
-    , margin: `0 auto`
-    , padding: `${consts.SPACING} 0`
-    }
-
-    style.secondTileRow = {
-      marginTop: consts.SPACING
     }
 
     const grey = {
@@ -45,53 +39,63 @@ class Home {
     , small: `We take ownership of your I.T. challenges and vision, transforming them into turnkey solutions.`
     }
 
-    const homeTilesInfo = [
-      { text: 'PRODUCTS AND SERVICES', link: '/' }
-    , { text: 'ABOUT US', link: '/' }
-    , { text: 'PRESS', link: '/' }
-    , { text: 'SOCIAL RESPONSIBILITY', link: '/' }
-    ]
-
-    const homeTileStyle = {
-      width: `125px`
-    , height: `125px`
-    , display: `inline-block`
-    , color: `white`
-    , backgroundColor: consts.BLUE
-    , textAlign: `center`
-    , verticalAlign: `top`
-    , padding: `10px`
-    , fontSize: `0.8em`
+    const homeTilesWrapper = {
+      width: `270px`
+    , margin: `0 auto`
+    , padding: `${consts.SPACING} 0`
     }
 
-    const topHomeTiles = homeTilesInfo.filter((info, i) => i < 2).map(homeTile)
-    const bottomHomeTiles = homeTilesInfo.filter((info, i) => i > 1).map(homeTile)
+    const homeTiles = {
+      info: [
+        { text: 'PRODUCTS AND SERVICES', link: '/' }
+      , { text: 'ABOUT US', link: '/' }
+      , { text: 'PRESS', link: '/' }
+      , { text: 'SOCIAL RESPONSIBILITY', link: '/' }
+    ]
 
-    function homeTile (info, i) {
-      const tileStyle = i
-        ? Object.assign({}, homeTileStyle, { marginLeft: consts.SPACING })
-        : homeTileStyle
-
-      return <HomeTile text={ info.text } link={ info.link } style={ tileStyle } />
+    , style: {
+        width: `125px`
+      , height: `125px`
+      , display: `inline-block`
+      , color: `white`
+      , backgroundColor: consts.BLUE
+      , textAlign: `center`
+      , verticalAlign: `top`
+      , padding: `10px`
+      , fontSize: `0.8em`
+      , secondTileRow: { marginTop: consts.SPACING }
+      }
     }
 
     return (
       <div style={ marginBottom }>
         <div style={ backgroundImage }>
           <div style={ style.max }>
-            <div style={ style.slogan }>
-              <div style={ style.slogan.big }>{ slogan.big }</div>
-              <div style={ style.slogan.small }>{ slogan.small }</div>
+            <div style={ sloganStyle }>
+              <div style={ sloganStyle.big }>{ slogan.big }</div>
+              <div style={ sloganStyle.small }>{ slogan.small }</div>
             </div>
           </div>
         </div>
 
         <div style={ grey }>
           <div style={ style.max }>
-            <div style={ style.homeTilesWrapper }>
-              <div>{ topHomeTiles }</div>
-              <div style={ style.secondTileRow }>{ bottomHomeTiles }</div>
+            <HomeTiles style={ homeTilesWrapper } tiles={ homeTiles } />
+
+            <WhichOneAreYou />
+            <OurServices />
+
+            <div><hr /></div>
+
+            <OurPartnerships />
+
+            <div>
+              <div>
+                <div>If you would like to learn more about our products and services</div>
+                <a>Contact Us</a>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
