@@ -9,7 +9,7 @@ module.exports = {
     './src/router.jsx'
   ],
   output: {
-    path: path.join(__dirname, 'dest'),
+    path: path.join(__dirname, 'static'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },

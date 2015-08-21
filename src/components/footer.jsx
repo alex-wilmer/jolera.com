@@ -29,7 +29,15 @@ class Footer {
       , { icon: <i className='fa fa-youtube' /> }
       , { icon: <i className='fa fa-rss' /> }
       ]
+
+    , bottomLine: [
+        { text: `Copyright &copy; ${ new Date().getFullYear() } Jolera` }
+      ]
     }
+
+    const footerStyle = this.props.wide
+      ? Object.assign({}, style.footer, { height: `${ consts.FOOTER_HEIGHT }px` })
+      : Object.assign({}, style.footer, { height: `${ consts.FOOTER_HEIGHT * 1.5 }px` })
 
     const linkStyleWide = {
       float: `left`
@@ -92,8 +100,14 @@ class Footer {
       )
     })
 
+    const bottomLine = data.bottomLine.map(l => {
+      return <a>{ l.text }</a>
+    })
+
+    console.log(bottomLine)
+
     return (
-      <div style={ style.footer }>
+      <div style={ footerStyle }>
         <div style={ style.max }>
           <div className='clearfix'>
             <div>{ mainLinks }</div>
@@ -104,7 +118,7 @@ class Footer {
           </div>
 
           <div>
-            Bottom row
+            { bottomLine }
           </div>
         </div>
       </div>

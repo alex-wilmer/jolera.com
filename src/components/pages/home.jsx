@@ -21,7 +21,7 @@ class Home {
     })
 
     return (
-      <div style={ style.footerMargin }>
+      <div style={ this.props.footerMargin }>
         <HomeHero wide={ this.props.wide } />
 
         <div style={ style.greyBackground }>
