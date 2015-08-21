@@ -1,9 +1,7 @@
 import React from 'react'
-import Router, { Route, RouteHandler } from 'react-router'
-
-import Header from './components/header.jsx'
-import Footer from './components/footer.jsx'
-import Home from './components/home.jsx'
+import { RouteHandler } from 'react-router'
+import Header from './header.jsx'
+import Footer from './footer.jsx'
 
 class App extends React.Component {
   constructor (props) {
@@ -35,23 +33,4 @@ class App extends React.Component {
   }
 }
 
-const routes = (
-  <Route handler={ App }>
-    <Route path='/' handler={ Home } />
-  </Route>
-)
-
-Router.run(routes, Root => {
-  const data = {
-    links: [
-      { name: `About Us`, path: `` }
-    , { name: `Products and Services`, path: `` }
-    , { name: `Press`, path: `` }
-    , { name: `Partnerships`, path: `` }
-    , { name: `Contact Us`, path: `` }
-    , { name: <span>&nbsp;<i className='fa fa-search'></i></span>, path: `` }
-    ]
-  }
-
-  React.render(<Root data={ data } />, document.body)
-})
+export default App
