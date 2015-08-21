@@ -1,9 +1,22 @@
 import React from 'react'
 import 'babel-core/polyfill'
+import consts from '../style/style-consts.jsx'
 
 import { Link } from 'react-router'
 
-class LinksList {
+class LinksList extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = { navOpen: false }
+    this.toggleNav = this.toggleNav.bind(this)
+  }
+
+  toggleNav () {
+    const navOpen = !this.state.navOpen
+    this.setState({ navOpen })
+  }
+
   render () {
     const style = {
       list: { float: `right` }
@@ -11,17 +24,49 @@ class LinksList {
         color: `white`
       , textDecoration: `none`
       , fontWeight: 300
+      , display: this.state.navOpen ? `block` : `inline`
+      }
+    , overlay: {
+        position: `fixed`
+      , top: 0
+      , left: 0
+      , width: `100%`
+      , height: `100%`
+      , backgroundColor: consts.BLUE
+      , zIndex: this.state.navOpen ? 1 : -1
+      , opacity: this.state.navOpen ? 1 : 0
+      , transition: `opacity 0.3s ease`
+      }
+    , close: {
+        float: `right`
+      , fontSize: `1.5em`
+      , padding: consts.SPACING
       }
     }
 
-    const links = this.props.wide
-      ? this.props.links.map((link, i) => {
-          if (i) style.links = Object.assign({}, style.links, { marginLeft: `20px` })
-          return <Link to='/' style={ style.links }>{ link.name }</Link>
-        })
-      : <a>&nbsp;<i className='fa fa-navicon' /></a>
+    const links = this.props.links.map((link, i) => {
+      if (i || this.state.navOpen) {
+        style.links = Object.assign({}, style.links, { paddingLeft: `20px` })
+      }
+      return <Link to='/' style={ style.links }>{ link.name }</Link>
+    })
 
-    return <span style={ style.list }>{ links }</span>
+    const navIcon = (
+      <a onClick={ this.toggleNav }>&nbsp;<i className='fa fa-navicon' /></a>
+    )
+
+    return (
+      <span>
+        <span style={ style.list }>{ this.props.wide ? links : navIcon }</span>
+        <div style={ style.overlay }>
+          <a onClick={ this.toggleNav }>
+            <i className='fa fa-close' style={ style.close } />
+          </a>
+          <Link to='/' style={ style.links }>jolera.com</Link>
+          { links }
+        </div>
+      </span>
+    )
   }
 }
 

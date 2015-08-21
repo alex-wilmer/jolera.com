@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 class HomeTile {
   render () {
     return (
-      <div style={ this.props.style }>
+      <Link to={ this.props.link } style={ this.props.style }>
         <img src={ this.props.src } />
         <span>{ this.props.text }</span>
-      </div>
+      </Link>
     )
   }
 }

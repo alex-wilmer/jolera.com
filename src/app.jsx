@@ -10,7 +10,6 @@ class App extends React.Component {
     super(props)
 
     this.state = { wide: `` }
-
     this.componentDidMount = this.componentDidMount.bind(this)
     this.mediaQueryChanged = this.mediaQueryChanged.bind(this)
   }
@@ -50,7 +49,7 @@ Router.run(routes, Root => {
     , { name: `Press`, path: `` }
     , { name: `Partnerships`, path: `` }
     , { name: `Contact Us`, path: `` }
-    , { name: <i className='fa fa-search'></i>, path: `` }
+    , { name: <span>&nbsp;<i className='fa fa-search'></i></span>, path: `` }
     ]
   }
 
