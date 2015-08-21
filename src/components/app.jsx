@@ -27,7 +27,7 @@ class App extends React.Component {
       <div id='app'>
         <Header links={ this.props.data.links } wide={ this.state.wide } />
         <RouteHandler wide={ this.state.wide } />
-        <Footer />
+        <Footer wide={ this.state.wide } />
       </div>
     )
   }

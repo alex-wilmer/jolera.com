@@ -9,6 +9,10 @@ const consts = {
 , BLUE: `#0A417E`
 , ORANGE: `#F6722A`
 , GREY: `#F5F5F5`
+  // FONTS
+, H1: 3
+, H2: 2
+, H3: 1.5
 }
 
 export default consts

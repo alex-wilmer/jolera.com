@@ -1,6 +1,6 @@
 import React from 'react'
-import Banner from './banner.jsx'
-import style from '../style/style.jsx'
+import Banner from '../banner.jsx'
+import style from '../../style/style.jsx'
 
 class Press {
   render () {

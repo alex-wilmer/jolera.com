@@ -33,6 +33,10 @@ const style = {
 , greyBackground: {
     backgroundColor: consts.GREY
   }
+
+, textCenter: {
+    textAlign: `center`
+  }
 }
 
 export default style

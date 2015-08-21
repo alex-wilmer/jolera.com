@@ -2,13 +2,13 @@ import React from 'react'
 import Router, { Route } from 'react-router'
 
 import App from './components/app.jsx'
-import Home from './components/home.jsx'
-import About from './components/about.jsx'
-import ProductsAndServices from './components/products-and-services.jsx'
-import Press from './components/press.jsx'
-import Partnerships from './components/partnerships.jsx'
-import ContactUs from './components/contact-us.jsx'
-import Search from './components/search.jsx'
+import Home from './components/pages/home.jsx'
+import About from './components/pages/about.jsx'
+import ProductsAndServices from './components/pages/products-and-services.jsx'
+import Press from './components/pages/press.jsx'
+import Partnerships from './components/pages/partnerships.jsx'
+import ContactUs from './components/pages/contact-us.jsx'
+import Search from './components/pages/search.jsx'
 
 const routes = (
   <Route handler={ App }>

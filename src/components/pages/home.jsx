@@ -1,14 +1,14 @@
 import React from 'react'
-import style from '../style/style.jsx'
-import consts from '../style/style-consts.jsx'
+import style from '../../style/style.jsx'
+import consts from '../../style/style-consts.jsx'
 import 'babel-core/polyfill'
 // components
-import HomeHero from './home-hero.jsx'
-import HomeTiles from './home-tiles.jsx'
-import WhichOneAreYou from './which-one-are-you.jsx'
-import OurServices from './our-services.jsx'
-import OurPartnerships from './our-partnerships.jsx'
-import PreFooter from './pre-footer.jsx'
+import HomeHero from '../home-hero.jsx'
+import HomeTiles from '../home-tiles.jsx'
+import WhichOneAreYou from '../which-one-are-you.jsx'
+import OurServices from '../our-services.jsx'
+import OurPartnerships from '../our-partnerships.jsx'
+import LearnMore from '../learn-more.jsx'
 
 class Home {
   render () {
@@ -16,12 +16,16 @@ class Home {
       display: this.props.wide ? `none` : `block`
     }
 
+    const padMax = Object.assign({}, style.max, {
+      padding: `${ consts.SPACING }px`
+    })
+
     return (
       <div style={ style.footerMargin }>
         <HomeHero wide={ this.props.wide } />
 
         <div style={ style.greyBackground }>
-          <div style={ style.max }>
+          <div style={ padMax }>
             <div style={ hideWide }>
               <HomeTiles />
             </div>
@@ -33,7 +37,7 @@ class Home {
           </div>
         </div>
 
-        <PreFooter />
+        <LearnMore />
       </div>
     )
   }
