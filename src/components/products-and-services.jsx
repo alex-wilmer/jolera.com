@@ -3,7 +3,9 @@ import React from 'react'
 class ProductsAndServices {
   render () {
     return (
-      <div>Products and services</div>
+      <div>
+        <div>Products and services</div>
+      </div>
     )
   }
 }

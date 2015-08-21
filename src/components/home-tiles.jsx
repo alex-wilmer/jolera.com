@@ -1,12 +1,13 @@
 import React from 'react'
 import HomeTile from './home-tile.jsx'
 import consts from '../style/style-consts.jsx'
+import 'babel-core/polyfill'
 
 class HomeTiles {
   render () {
     const style = {
       wrapper: {
-        width: `270px`
+        width: `290px`
       , margin: `0 auto`
       , padding: `${ consts.SPACING } 0`
       }
@@ -14,8 +15,8 @@ class HomeTiles {
         marginTop: consts.SPACING
       }
     , tile: {
-        width: `125px`
-      , height: `125px`
+        width: `135px`
+      , height: `135px`
       , display: `inline-block`
       , color: `white`
       , backgroundColor: consts.BLUE
@@ -25,6 +26,14 @@ class HomeTiles {
       , fontSize: `0.8em`
       }
     }
+
+    const tileWrapper = this.props.wide
+      ? Object.assign({}, style.wrapper, {
+          position: `absolute`
+        , right: 0
+        })
+
+      : style.wrapper
 
     const tiles = [
         { text: 'PRODUCTS AND SERVICES', link: '/' }
@@ -45,7 +54,7 @@ class HomeTiles {
     }
 
     return (
-      <div style={ style.wrapper }>
+      <div style={ tileWrapper }>
         <div>{ topTiles }</div>
         <div style={ style.secondTileRow }>{ bottomTiles }</div>
       </div>

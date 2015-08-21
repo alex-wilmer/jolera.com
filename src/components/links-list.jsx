@@ -12,6 +12,10 @@ class LinksList extends React.Component {
     this.toggleNav = this.toggleNav.bind(this)
   }
 
+  componentWillReceiveProps () {
+    this.setState({ navOpen: false })
+  }
+
   toggleNav () {
     const navOpen = !this.state.navOpen
     this.setState({ navOpen })

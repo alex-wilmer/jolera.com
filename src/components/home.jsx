@@ -3,7 +3,7 @@ import style from '../style/style.jsx'
 import consts from '../style/style-consts.jsx'
 import 'babel-core/polyfill'
 // components
-import Hero from './hero.jsx'
+import HomeHero from './home-hero.jsx'
 import HomeTiles from './home-tiles.jsx'
 import WhichOneAreYou from './which-one-are-you.jsx'
 import OurServices from './our-services.jsx'
@@ -12,23 +12,22 @@ import PreFooter from './pre-footer.jsx'
 
 class Home {
   render () {
-    const marginBottom = {
-      marginBottom: `300px`
-    }
-
-    const grey = {
-      background: consts.GREY
+    const hideWide = {
+      display: this.props.wide ? `none` : `block`
     }
 
     return (
-      <div style={ marginBottom }>
-        <Hero />
+      <div style={ style.footerMargin }>
+        <HomeHero wide={ this.props.wide } />
 
-        <div style={ grey }>
+        <div style={ style.greyBackground }>
           <div style={ style.max }>
-            <HomeTiles />
-            <WhichOneAreYou />
-            <OurServices />
+            <div style={ hideWide }>
+              <HomeTiles />
+            </div>
+
+            <WhichOneAreYou wide={ this.props.wide } />
+            <OurServices wide={ this.props.wide } />
             <hr />
             <OurPartnerships />
           </div>
