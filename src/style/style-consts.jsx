@@ -7,12 +7,14 @@ const consts = {
   // COLORS
 , BLACK: `#171717`
 , BLUE: `#0A417E`
+, BABY_BLUE: `#01AAD1`
 , ORANGE: `#F6722A`
 , GREY: `#F5F5F5`
   // FONTS
 , H1: 3
 , H2: 2
 , H3: 1.5
+, H4: 1.3
 }
 
 export default consts

@@ -1,7 +1,7 @@
 import React from 'react'
 import assign from 'object-assign'
-import { SPACING } from '../style/style-consts.jsx'
-import { textCenter } from '../style/style.jsx'
+import { SPACING, BABY_BLUE } from '../style/style-consts.jsx'
+import { textCenter, smallHeader, button } from '../style/style.jsx'
 
 class OurServices {
   render () {
@@ -14,6 +14,8 @@ class OurServices {
     tileBaseStyle = this.props.wide
       ? assign({}, tileBaseStyle, { float: `left` })
       : assign({}, tileBaseStyle, { display: `block`, margin: `0 auto` })
+
+    const buttonStyle = assign({}, button, { backgroundColor: BABY_BLUE })
 
     const data = [1, 2, 3]
     const tiles = data.map((m, i) => {
@@ -41,9 +43,9 @@ class OurServices {
 
     return (
       <div style={ textCenter }>
-        <div>Our Services</div>
+        <div style={ smallHeader }>Our Services</div>
         { tiles }
-        <div><a>VIEW ALL SERVICES</a></div>
+        <div><a style={ buttonStyle }>VIEW ALL SERVICES</a></div>
       </div>
     )
   }

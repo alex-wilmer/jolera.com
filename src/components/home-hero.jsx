@@ -1,6 +1,6 @@
 import React from 'react'
 import assign from 'object-assign'
-import { SPACING } from '../style/style-consts.jsx'
+import { SPACING, HEADER_HEIGHT } from '../style/style-consts.jsx'
 import { max } from '../style/style.jsx'
 import HomeTiles from './home-tiles.jsx'
 
@@ -10,7 +10,7 @@ class HomeHero {
       backgroundImage: `url(img/bg1.png)`
     , backgroundSize: `cover`
     , backgroundPosition: `center center`
-    , height: `calc(${ this.props.wide ? 48 : 100 }% - 60px)`
+    , height:  this.props.wide ? `400px` : `calc(100% - ${ HEADER_HEIGHT }px)`
     , padding: SPACING
     , position: `relative`
     }

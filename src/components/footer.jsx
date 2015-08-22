@@ -105,8 +105,6 @@ class Footer {
       return <a>{ l.text }</a>
     })
 
-    console.log(bottomLine)
-
     return (
       <div style={ footerStyle }>
         <div style={ max }>

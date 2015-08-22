@@ -1,7 +1,7 @@
 import React from 'react'
 import assign from 'object-assign'
-import { max } from '../style/style.jsx'
-import { H3 } from '../style/style-consts.jsx'
+import { max, button } from '../style/style.jsx'
+import { H3, ORANGE } from '../style/style-consts.jsx'
 
 class LearnMore {
   render () {
@@ -17,13 +17,14 @@ class LearnMore {
       fontSize: `${ H3 }em`
     }
 
+    const buttonStyle = assign({}, button, { backgroundColor: ORANGE })
+
     const center = assign({}, max, {
       position: `relative`
     , top: `50%`
     , transform: `translateY(-50%)`
+    , maxWidth: `500px`
     })
-
-    center.maxWidth = `500px`
 
     return (
       <div style={ background }>
@@ -32,7 +33,7 @@ class LearnMore {
             If you would like to learn more about our products and services
           </div>
 
-          <a>Contact Us</a>
+          <a style={ buttonStyle }>CONTACT US</a>
         </div>
       </div>
     )

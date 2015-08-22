@@ -37,6 +37,19 @@ const style = {
 , textCenter: {
     textAlign: `center`
   }
+
+, smallHeader: {
+    fontSize: `${ consts.H4 }em`
+  , color: `${ consts.BLUE }`
+  , margin: `${ consts.SPACING }px 0 ${ consts.SPACING }`
+  }
+
+, button: {
+    color: `white`
+  , padding: `10px 20px`
+  , margin: `20px 0`
+  , display: `inline-block`
+  }
 }
 
 export default style
