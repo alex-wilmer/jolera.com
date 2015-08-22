@@ -1,12 +1,12 @@
 import React from 'react'
-import consts from '../style/style-consts.jsx'
+import { SPACING } from '../style/style-consts.jsx'
 
 class WhichOneAreYou {
   render () {
     const style = {
       wrapper: {
         textAlign: `center`
-      , margin: `${ consts.SPACING + 10 }px 0 ${ consts.SPACING }`
+      , margin: `${ SPACING + 10 }px 0 ${ SPACING }`
       }
     , tile: {
         float: `left`

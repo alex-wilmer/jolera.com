@@ -2,7 +2,7 @@ import React from 'react'
 import { RouteHandler } from 'react-router'
 import Header from './header.jsx'
 import Footer from './footer.jsx'
-import consts from '../style/style-consts.jsx'
+import { FOOTER_HEIGHT } from '../style/style-consts.jsx'
 
 class App extends React.Component {
   constructor (props) {
@@ -19,8 +19,8 @@ class App extends React.Component {
     this.setState({ mql, wide: mql.matches
     , footerMargin: {
         marginBottom: mql.matches
-          ? `${ consts.FOOTER_HEIGHT }px`
-          : `${ consts.FOOTER_HEIGHT * 1.5 }px`
+          ? `${ FOOTER_HEIGHT }px`
+          : `${ FOOTER_HEIGHT * 1.5 }px`
       }
     })
   }
@@ -29,8 +29,8 @@ class App extends React.Component {
     this.setState({ wide: this.state.mql.matches
     , footerMargin: {
         marginBottom: this.state.mql.matches
-          ? `${ consts.FOOTER_HEIGHT }px`
-          : `${ consts.FOOTER_HEIGHT * 1.5 }px`
+          ? `${ FOOTER_HEIGHT }px`
+          : `${ FOOTER_HEIGHT * 1.5 }px`
       }
     })
   }

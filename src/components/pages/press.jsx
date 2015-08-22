@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from '../banner.jsx'
-import style from '../../style/style.jsx'
+import { footerMargin} from '../../style/style.jsx'
 
 class Press {
   render () {
@@ -16,7 +16,7 @@ class Press {
     const bannerImage = `img/bg1.png`
 
     return (
-      <div style={ style.footerMargin }>
+      <div style={ footerMargin }>
         <Banner text={ bannerText } image={ bannerImage } />
 
         <div>

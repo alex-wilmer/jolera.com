@@ -1,12 +1,12 @@
 import React from 'react'
-import consts from '../style/style-consts.jsx'
+import { HEADER_HEIGHT } from '../style/style-consts.jsx'
 
 class Banner {
   render () {
     const style = {
       backgroundImage: `url(${ this.props.image })`
     , backgroundSize: `cover`
-    , height: `calc(100% - ${ consts.HEADER_HEIGHT })`
+    , height: `calc(100% - ${ HEADER_HEIGHT })`
     , textAlign: `center`
     , color: `white`
     }

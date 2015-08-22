@@ -1,6 +1,7 @@
 import React from 'react'
-import style from '../style/style.jsx'
-import consts from '../style/style-consts.jsx'
+import assign from 'object-assign'
+import { footer, max } from '../style/style.jsx'
+import { FOOTER_HEIGHT, SPACING } from '../style/style-consts.jsx'
 
 class Footer {
   render () {
@@ -36,8 +37,8 @@ class Footer {
     }
 
     const footerStyle = this.props.wide
-      ? Object.assign({}, style.footer, { height: `${ consts.FOOTER_HEIGHT }px` })
-      : Object.assign({}, style.footer, { height: `${ consts.FOOTER_HEIGHT * 1.5 }px` })
+      ? assign({}, footer, { height: `${ FOOTER_HEIGHT }px` })
+      : assign({}, footer, { height: `${ FOOTER_HEIGHT * 1.5 }px` })
 
     const linkStyleWide = {
       float: `left`
@@ -56,7 +57,7 @@ class Footer {
 
     const socialLinksWrapper = {
       textAlign: `center`
-    , margin: `${ consts.SPACING }px 0`
+    , margin: `${ SPACING }px 0`
     }
 
     const headerLinkStyle = {
@@ -88,7 +89,7 @@ class Footer {
 
     const socialLinks = data.socialLinks.map((l, i) => {
       const socialLinkStyle = i
-        ? Object.assign({}, socialLinkStyleBase, {
+        ? assign({}, socialLinkStyleBase, {
             marginLeft: `8vw`
           })
         : socialLinkStyleBase
@@ -108,7 +109,7 @@ class Footer {
 
     return (
       <div style={ footerStyle }>
-        <div style={ style.max }>
+        <div style={ max }>
           <div className='clearfix'>
             <div>{ mainLinks }</div>
 

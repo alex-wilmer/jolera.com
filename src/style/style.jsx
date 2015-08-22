@@ -1,4 +1,4 @@
-import 'babel-core/polyfill'
+import assign from 'object-assign'
 import consts from './style-consts.jsx'
 import mixins from './style-mixins.jsx'
 
@@ -8,7 +8,7 @@ const style = {
   , margin: `0 auto`
   }
 
-, header: Object.assign({}, {
+, header: assign({}, {
       backgroundColor: consts.BLUE
     , color: `white`
     , padding: `0 ${ consts.SPACING }px`

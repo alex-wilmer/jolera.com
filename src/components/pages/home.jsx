@@ -1,7 +1,7 @@
 import React from 'react'
-import style from '../../style/style.jsx'
-import consts from '../../style/style-consts.jsx'
-import 'babel-core/polyfill'
+import { greyBackground, max } from '../../style/style.jsx'
+import { SPACING } from '../../style/style-consts.jsx'
+import assign from 'object-assign'
 // components
 import HomeHero from '../home-hero.jsx'
 import HomeTiles from '../home-tiles.jsx'
@@ -16,15 +16,15 @@ class Home {
       display: this.props.wide ? `none` : `block`
     }
 
-    const padMax = Object.assign({}, style.max, {
-      padding: `${ consts.SPACING }px`
+    const padMax = assign({}, max, {
+      padding: `${ SPACING }px`
     })
 
     return (
       <div style={ this.props.footerMargin }>
         <HomeHero wide={ this.props.wide } />
 
-        <div style={ style.greyBackground }>
+        <div style={ greyBackground }>
           <div style={ padMax }>
             <div style={ hideWide }>
               <HomeTiles />

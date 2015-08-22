@@ -1,6 +1,6 @@
 import React from 'react'
-import 'babel-core/polyfill'
-import consts from '../style/style-consts.jsx'
+import assign from 'object-assign'
+import { BLUE, SPACING } from '../style/style-consts.jsx'
 
 import { Link } from 'react-router'
 
@@ -36,7 +36,7 @@ class LinksList extends React.Component {
       , left: 0
       , width: `100%`
       , height: `100%`
-      , backgroundColor: consts.BLUE
+      , backgroundColor: BLUE
       , zIndex: this.state.navOpen ? 1 : -1
       , opacity: this.state.navOpen ? 1 : 0
       , transition: `opacity 0.3s ease`
@@ -44,13 +44,13 @@ class LinksList extends React.Component {
     , close: {
         float: `right`
       , fontSize: `1.5em`
-      , padding: consts.SPACING
+      , padding: SPACING
       }
     }
 
     const links = this.props.links.map((link, i) => {
       if (i || this.state.navOpen) {
-        style.links = Object.assign({}, style.links, { paddingLeft: `20px` })
+        style.links = assign({}, style.links, { paddingLeft: `20px` })
       }
       return <Link to={ link.path } style={ style.links }>{ link.name }</Link>
     })

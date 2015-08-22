@@ -1,5 +1,5 @@
 import React from 'react'
-import Router, { Route } from 'react-router'
+import Router, { Route, DefaultRoute, NotFoundRoute } from 'react-router'
 
 import App from './components/app.jsx'
 import Home from './components/pages/home.jsx'
@@ -9,6 +9,7 @@ import Press from './components/pages/press.jsx'
 import Partnerships from './components/pages/partnerships.jsx'
 import ContactUs from './components/pages/contact-us.jsx'
 import Search from './components/pages/search.jsx'
+import NotFound from './components/pages/not-found.jsx'
 
 const routes = (
   <Route handler={ App }>
@@ -19,6 +20,8 @@ const routes = (
     <Route path='/partnerships' handler={ Partnerships } />
     <Route path='/contact-us' handler={ ContactUs } />
     <Route path='/search' handler={ Search } />
+    <DefaultRoute handler={ Home } />
+    <NotFoundRoute handler={ NotFound } />
   </Route>
 )
 

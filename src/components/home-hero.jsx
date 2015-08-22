@@ -1,8 +1,8 @@
 import React from 'react'
-import consts from '../style/style-consts.jsx'
-import style from '../style/style.jsx'
+import assign from 'object-assign'
+import { SPACING } from '../style/style-consts.jsx'
+import { max } from '../style/style.jsx'
 import HomeTiles from './home-tiles.jsx'
-import 'babel-core/polyfill'
 
 class HomeHero {
   render () {
@@ -11,7 +11,7 @@ class HomeHero {
     , backgroundSize: `cover`
     , backgroundPosition: `center center`
     , height: `calc(${ this.props.wide ? 48 : 100 }% - 60px)`
-    , padding: consts.SPACING
+    , padding: SPACING
     , position: `relative`
     }
 
@@ -21,19 +21,19 @@ class HomeHero {
       , bottom: `25px`
       , color: `white`
       , width: this.props.wide ? `50%` : `100%`
-      , paddingRight: consts.SPACING
+      , paddingRight: SPACING
       }
     , big: { fontSize: `2em` }
-    , small: { fontSize: `1.2em`, paddingTop: consts.SPACING }
+    , small: { fontSize: `1.2em`, paddingTop: SPACING }
     }
 
     const sloganWrapper = this.props.wide
-      ? Object.assign({}, sloganStyle.wrapper, {
+      ? assign({}, sloganStyle.wrapper, {
           maxWidth: `550px`
         })
       : sloganStyle.wrapper
 
-    const contentWrapper = Object.assign({}, style.max, {
+    const contentWrapper = assign({}, max, {
       position: `relative`
     , height: `100%`
     })

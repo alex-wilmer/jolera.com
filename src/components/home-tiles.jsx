@@ -1,7 +1,7 @@
 import React from 'react'
 import HomeTile from './home-tile.jsx'
-import consts from '../style/style-consts.jsx'
-import 'babel-core/polyfill'
+import { SPACING, BLUE } from '../style/style-consts.jsx'
+import assign from 'object-assign'
 
 class HomeTiles {
   render () {
@@ -9,26 +9,26 @@ class HomeTiles {
       wrapper: {
         width: `290px`
       , margin: `0 auto`
-      , padding: `${ consts.SPACING } 0`
+      , padding: `${ SPACING } 0`
       }
     , secondTileRow: {
-        marginTop: consts.SPACING
+        marginTop: SPACING
       }
     , tile: {
         width: `135px`
       , height: `135px`
       , display: `inline-block`
       , color: `white`
-      , backgroundColor: consts.BLUE
+      , backgroundColor: BLUE
       , textAlign: `center`
       , verticalAlign: `top`
-      , padding: `${ consts.SPACING / 2 }px`
+      , padding: `${ SPACING / 2 }px`
       , fontSize: `0.8em`
       }
     }
 
     const tileWrapper = this.props.wide
-      ? Object.assign({}, style.wrapper, {
+      ? assign({}, style.wrapper, {
           position: `absolute`
         , right: 0
         })
@@ -47,7 +47,7 @@ class HomeTiles {
 
     function mapTile (info, i) {
       const tileStyle = i
-        ? Object.assign({}, style.tile, { marginLeft: consts.SPACING })
+        ? assign({}, style.tile, { marginLeft: SPACING })
         : style.tile
 
       return <HomeTile text={ info.text } link={ info.link } style={ tileStyle } />

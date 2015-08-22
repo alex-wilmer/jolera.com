@@ -1,7 +1,7 @@
 import React from 'react'
-import style from '../style/style.jsx'
-import consts from '../style/style-consts.jsx'
-import 'babel-core/polyfill'
+import assign from 'object-assign'
+import { max } from '../style/style.jsx'
+import { H3 } from '../style/style-consts.jsx'
 
 class LearnMore {
   render () {
@@ -14,10 +14,10 @@ class LearnMore {
     }
 
     const header = {
-      fontSize: `${ consts.H3 }em`
+      fontSize: `${ H3 }em`
     }
 
-    const center = Object.assign({}, style.max, {
+    const center = assign({}, max, {
       position: `relative`
     , top: `50%`
     , transform: `translateY(-50%)`
