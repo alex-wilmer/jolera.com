@@ -10,7 +10,7 @@ class HomeHero {
       backgroundImage: `url(img/bg1.png)`
     , backgroundSize: `cover`
     , backgroundPosition: `center center`
-    , height:  this.props.wide ? `400px` : `calc(100% - ${ HEADER_HEIGHT }px)`
+    , height:  this.props.wide ? `380px` : `calc(100% - ${ HEADER_HEIGHT }px)`
     , padding: SPACING
     , position: `relative`
     }

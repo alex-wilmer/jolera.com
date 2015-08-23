@@ -47,7 +47,7 @@ const style = {
 , button: {
     color: `white`
   , padding: `10px 20px`
-  , margin: `20px 0`
+  , margin: `40px 0`
   , display: `inline-block`
   }
 }

@@ -5,6 +5,10 @@ import { textCenter, smallHeader, button } from '../style/style.jsx'
 
 class OurServices {
   render () {
+    const wrapper = assign({}, textCenter, {
+      margin: `${ SPACING + 30 }px 0 ${ SPACING }px`
+    })
+
     let tileBaseStyle = {
       width: this.props.wide ? `calc(33.33% - ${ SPACING - 6 }px) ` : `300px`
     , height: this.props.wide ? `calc(33.33% - ${ SPACING - 6 }px) ` : `300px`
@@ -42,7 +46,7 @@ class OurServices {
     })
 
     return (
-      <div style={ textCenter }>
+      <div style={ wrapper }>
         <div style={ smallHeader }>Our Services</div>
         { tiles }
         <div><a style={ buttonStyle }>VIEW ALL SERVICES</a></div>
