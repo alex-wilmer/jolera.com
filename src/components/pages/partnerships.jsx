@@ -1,11 +1,9 @@
 import React from 'react'
 
-class Partnerships {
+export default class Partnerships {
   render () {
     return (
       <div>Partnerships!</div>
     )
   }
 }
-
-export default Partnerships

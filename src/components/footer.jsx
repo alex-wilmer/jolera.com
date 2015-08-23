@@ -1,9 +1,14 @@
+// Dependencies
+
 import React from 'react'
 import assign from 'object-assign'
+
+// Style
+
 import { footer, max } from '../style/style.jsx'
 import { FOOTER_HEIGHT, SPACING } from '../style/style-consts.jsx'
 
-class Footer {
+export default class Footer {
   render () {
     const data = {
       mainLinks: [{
@@ -124,5 +129,3 @@ class Footer {
     )
   }
 }
-
-export default Footer

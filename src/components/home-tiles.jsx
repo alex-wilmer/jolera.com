@@ -3,7 +3,7 @@ import HomeTile from './home-tile.jsx'
 import { SPACING, BLUE } from '../style/style-consts.jsx'
 import assign from 'object-assign'
 
-class HomeTiles {
+export default class HomeTiles {
   render () {
     const style = {
       wrapper: {
@@ -61,5 +61,3 @@ class HomeTiles {
     )
   }
 }
-
-export default HomeTiles

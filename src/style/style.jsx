@@ -46,9 +46,24 @@ const style = {
 
 , button: {
     color: `white`
-  , padding: `10px 20px`
-  , margin: `40px 0`
+  , padding: `${ consts.SPACING / 2 }px ${ consts.SPACING }px`
+  , margin: `${ consts.SPACING * 2 }px 0`
   , display: `inline-block`
+  , transition: `background-color 0.3s ease`
+  }
+
+, orange: {
+    backgroundColor: consts.ORANGE
+  , ':hover': {
+      backgroundColor: `rgb(185, 97, 48)`
+    }
+  }
+
+, babyBlue: {
+    backgroundColor: consts.BABY_BLUE
+  , ':hover': {
+      backgroundColor: `#1C8DA7`
+    }
   }
 }
 

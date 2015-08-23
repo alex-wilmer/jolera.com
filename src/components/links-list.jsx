@@ -4,7 +4,7 @@ import { BLUE, SPACING } from '../style/style-consts.jsx'
 
 import { Link } from 'react-router'
 
-class LinksList extends React.Component {
+export default class LinksList extends React.Component {
   constructor (props) {
     super(props)
 
@@ -73,5 +73,3 @@ class LinksList extends React.Component {
     )
   }
 }
-
-export default LinksList

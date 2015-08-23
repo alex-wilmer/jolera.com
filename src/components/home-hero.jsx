@@ -4,7 +4,7 @@ import { SPACING, HEADER_HEIGHT } from '../style/style-consts.jsx'
 import { max } from '../style/style.jsx'
 import HomeTiles from './home-tiles.jsx'
 
-class HomeHero {
+export default class HomeHero {
   render () {
     const backgroundImage = {
       backgroundImage: `url(img/bg1.png)`
@@ -65,5 +65,3 @@ class HomeHero {
     )
   }
 }
-
-export default HomeHero

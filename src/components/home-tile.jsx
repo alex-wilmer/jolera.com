@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-class HomeTile {
+export default class HomeTile {
   render () {
     return (
       <Link to='/' style={ this.props.style }>
@@ -11,5 +11,3 @@ class HomeTile {
     )
   }
 }
-
-export default HomeTile

@@ -1,9 +1,11 @@
 import React from 'react'
+import Radium from 'radium'
 import assign from 'object-assign'
-import { SPACING, BABY_BLUE } from '../style/style-consts.jsx'
-import { textCenter, smallHeader, button } from '../style/style.jsx'
+import { SPACING } from '../style/style-consts.jsx'
+import { textCenter, smallHeader, button, babyBlue } from '../style/style.jsx'
 
-class OurServices {
+@Radium
+export default class OurServices extends React.Component {
   render () {
     const wrapper = assign({}, textCenter, {
       margin: `${ SPACING + 30 }px 0 ${ SPACING }px`
@@ -18,8 +20,6 @@ class OurServices {
     tileBaseStyle = this.props.wide
       ? assign({}, tileBaseStyle, { float: `left` })
       : assign({}, tileBaseStyle, { display: `block`, margin: `0 auto` })
-
-    const buttonStyle = assign({}, button, { backgroundColor: BABY_BLUE })
 
     const data = [1, 2, 3]
     const tiles = data.map((m, i) => {
@@ -49,10 +49,8 @@ class OurServices {
       <div style={ wrapper }>
         <div style={ smallHeader }>Our Services</div>
         { tiles }
-        <div><a style={ buttonStyle }>VIEW ALL SERVICES</a></div>
+        <div><a style={ [button, babyBlue] }>VIEW ALL SERVICES</a></div>
       </div>
     )
   }
 }
-
-export default OurServices

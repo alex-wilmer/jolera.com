@@ -1,6 +1,6 @@
 import React from 'react'
 
-class WhichOneAreYouTile {
+export default class WhichOneAreYouTile {
   render () {
     return (
       <div style={ this.props.tileStyle }>
@@ -11,5 +11,3 @@ class WhichOneAreYouTile {
     )
   }
 }
-
-export default WhichOneAreYouTile

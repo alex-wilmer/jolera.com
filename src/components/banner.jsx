@@ -1,7 +1,7 @@
 import React from 'react'
 import { HEADER_HEIGHT } from '../style/style-consts.jsx'
 
-class Banner {
+export default class Banner {
   render () {
     const style = {
       backgroundImage: `url(${ this.props.image })`
@@ -27,5 +27,3 @@ class Banner {
     )
   }
 }
-
-export default Banner

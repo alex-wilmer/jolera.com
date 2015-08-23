@@ -1,6 +1,6 @@
 import React from 'react'
 
-class ProductsAndServices {
+export default class ProductsAndServices {
   render () {
     return (
       <div>
@@ -9,5 +9,3 @@ class ProductsAndServices {
     )
   }
 }
-
-export default ProductsAndServices

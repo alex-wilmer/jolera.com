@@ -1,7 +1,26 @@
+/*
+
+  router.jsx
+  ==========
+
+  This is the entry point of the application, which is built by webpack.
+  It wraps our controller view, as well as our pages in react-router's routing
+  system, allowing App's `<RouteHandler />` to load components based on the
+  current path.
+
+*/
+
+// Dependencies
+
 import React from 'react'
 import Router, { Route, DefaultRoute, NotFoundRoute } from 'react-router'
 
+// Controller View
+
 import App from './components/app.jsx'
+
+// 'Pages', so to speak
+
 import Home from './components/pages/home.jsx'
 import About from './components/pages/about.jsx'
 import ProductsAndServices from './components/pages/products-and-services.jsx'

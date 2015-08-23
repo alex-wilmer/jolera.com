@@ -1,11 +1,9 @@
 import React from 'react'
 
-class ContactUs {
+export default class ContactUs {
   render () {
     return (
       <div>Contact us!</div>
     )
   }
 }
-
-export default ContactUs

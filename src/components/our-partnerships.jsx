@@ -3,7 +3,7 @@ import { SPACING } from '../style/style-consts.jsx'
 import { smallHeader } from '../style/style.jsx'
 import Carousel from './carousel.jsx'
 
-class OurPartnerships {
+export default class OurPartnerships {
   render () {
     const style = {
       wrapper: {
@@ -20,5 +20,3 @@ class OurPartnerships {
     )
   }
 }
-
-export default OurPartnerships

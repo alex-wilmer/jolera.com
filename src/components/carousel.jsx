@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Carousel {
+export default class Carousel {
   render () {
     return (
       <div>
@@ -9,5 +9,3 @@ class Carousel {
     )
   }
 }
-
-export default Carousel

@@ -5,7 +5,7 @@ import assign from 'object-assign'
 
 import WhichOneAreYouTile from './which-one-are-you-tile.jsx'
 
-class WhichOneAreYou {
+export default class WhichOneAreYou {
   render () {
     const style = {
       wrapper: {
@@ -61,5 +61,3 @@ class WhichOneAreYou {
     )
   }
 }
-
-export default WhichOneAreYou

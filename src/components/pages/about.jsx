@@ -1,11 +1,9 @@
 import React from 'react'
 
-class About {
+export default class About {
   render () {
     return (
       <div>About Us!</div>
     )
   }
 }
-
-export default About

@@ -2,7 +2,7 @@ import React from 'react'
 import Banner from '../banner.jsx'
 import { footerMargin} from '../../style/style.jsx'
 
-class Press {
+export default class Press {
   render () {
     const tiles = [ `one`, `two`, `three`]
 
@@ -26,5 +26,3 @@ class Press {
     )
   }
 }
-
-export default Press

@@ -1,10 +1,28 @@
+/*
+
+  app.jsx
+  =======
+
+  This is the controller view. All UI-only state is housed and updated here.
+  Any components that must be on all pages are loaded here.
+
+*/
+
+// Dependencies
+
 import React from 'react'
 import { RouteHandler } from 'react-router'
+
+// Child components
+
 import Header from './header.jsx'
 import Footer from './footer.jsx'
+
+// Style
+
 import { FOOTER_HEIGHT } from '../style/style-consts.jsx'
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor (props) {
     super(props)
 
@@ -45,5 +63,3 @@ class App extends React.Component {
     )
   }
 }
-
-export default App

@@ -5,6 +5,23 @@ const mixins = {
     , lineHeight: `${ height }px`
     }
   }
+
+, pos: (x, y, absolute) => {
+    return {
+      position: absolute ? `absolute` : `relative`
+    , top: `${ y }%`
+    , left: `${ x }%`
+    , transform: `translate(-${ x }%, -${ y }%)`
+    }
+  }
+
+, posY: (y, absolute) => {
+    return {
+      position: absolute ? `absolute` : `relative`
+    , top: `${ y }%`
+    , transform: `translateY(-${ y }%)`
+    }
+  }
 }
 
 export default mixins

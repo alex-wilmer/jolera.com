@@ -4,7 +4,7 @@ import style from '../style/style.jsx'
 
 import LinksList from './links-list.jsx'
 
-class Header {
+export default class Header {
   render () {
     const textColor = {
       color: `white`
@@ -20,5 +20,3 @@ class Header {
     )
   }
 }
-
-export default Header
