@@ -1,8 +1,9 @@
 import React from 'react'
 import Radium from 'radium'
 import Banner from '../banner.jsx'
-import { footerMargin, max, greyBackground } from '../../style/style.jsx'
-import consts from '../../style/style-consts.jsx'
+import LearnMore from '../learn-more.jsx'
+import { footerMargin, max, greyBackground, button, babyBlue, textCenter } from '../../style/style.jsx'
+import { BLUE, BABY_BLUE } from '../../style/style-consts.jsx'
 
 @Radium
 export default class Press extends React.Component {
@@ -25,50 +26,52 @@ export default class Press extends React.Component {
     }
     const tiles = [ one, two, three, one, two, three, one, two, three ]
 
-    const imgStyle = {
-      width: `${ 100 }%`
-    , height: this.width
-    }
+    const xTileDivPadding = 30
+    const gutterPadding = 0.5
 
-    const gutter = 2
-
-    const tileStyle = {
-      width: this.props.wide ? `${ 33.3 }%` : `100%`
-    , display: 'inline-block'
-    , padding: `${ gutter / 2 }%`
-    }
-
-    const innerTileStyle = {
-      border: 'solid 1px grey'
-    , ':hover': { cursor: 'pointer' }
-    }
-
-    const textBoxStyle = {
-      padding: `${ 5 }px ${ 10 }px`
-    }
-
-    const headingStyle = {
-      color: consts.BLUE
-    , fontSize: `${ 24 }px`
-    }
-
-    const descriptionStyle = {
-      color: consts.BLUE
-    }
-
-    const readMoreStyle = {
-      color: consts.BABY_BLUE
+    const style = {
+      tileDiv: {
+        padding: this.props.wide ? `${ xTileDivPadding }px 0px` : `30px 60px`
+      }
+    , tile: {
+        width: this.props.wide ? `${ 33.3 }%` : `100%`
+      , display: 'inline-block'
+      , padding: `${ gutterPadding }%`
+      }
+    , img: {
+        width: `${ 100 }%`
+      }
+    , innerTile: {
+        border: 'solid 1px grey'
+      , ':hover': { cursor: 'pointer' }
+      }
+    , textBox: {
+        padding: `${ 5 }px ${ 10 }px`
+      }
+    , heading: {
+        color: BLUE
+      , fontSize: `${ 24 }px`
+      }
+    , description: {
+        color: BLUE
+      }
+    , readMore: {
+        color: BABY_BLUE
+      }
+    , evenBottomPad: {
+        paddingBottom: `${ xTileDivPadding + gutterPadding }px`
+      }
     }
 
     const tilediv = tiles.map((t, i) => {
       return (
-        <div style={ tileStyle }>
-          <div key={ i } style={ innerTileStyle }>
-            <div><img src={ t.image } style={ imgStyle } /></div>
-            <div style={ textBoxStyle }>
-              <div style={ headingStyle }>{ t.title }</div>
-              <div style={ descriptionStyle }>{ t.text }</div>
-              <div style={ readMoreStyle }>Read More</div>
+        <div style={ style.tile }>
+          <div key={ i } style={ style.innerTile }>
+            <div><img src={ t.image } style={ style.img } /></div>
+            <div style={ style.textBox }>
+              <div style={ style.heading }>{ t.title }</div>
+              <div style={ style.description }>{ t.text }</div>
+              <div style={ style.readMore }>Read More</div>
             </div>
           </div>
         </div>
@@ -83,12 +86,19 @@ export default class Press extends React.Component {
     const bannerImage = `img/bg1.png`
 
     return (
-      <div style={[ footerMargin, greyBackground ]}>
+      <div style={ [footerMargin, greyBackground] }>
         <Banner text={ bannerText } image={ bannerImage } wide={ this.props.wide } />
 
         <div style={ max }>
-          <div>{ tilediv }</div>
+          <div style={ style.tileDiv }>{ tilediv }</div>
         </div>
+
+        <div style={ textCenter }>
+          <a style={ [button, babyBlue] }>Load more</a>
+        </div>
+        <div style={ style.evenBottomPad }></div>
+
+        <LearnMore />
       </div>
     )
   }
