@@ -21,7 +21,7 @@ export default class Banner {
       <div style={ style }>
         <div style={ center }>
           <div style={ { fontSize: `${ H2 }em` } }>{ this.props.text.big }</div>
-          <div style={ { marginTop: `20px` } }>{ this.props.text.small }</div>
+          <div style={ { marginTop: `20px` }  }>{ this.props.text.small }</div>
         </div>
       </div>
     )
