@@ -25,15 +25,15 @@ export default class Press extends React.Component {
     }
     const tiles = [ one, two, three, one, two, three, one, two, three ]
 
-    const imgStyle = { 
+    const imgStyle = {
       width: `${ 100 }%`
-    , height: this.width 
+    , height: this.width
     }
 
     const gutter = 2
 
     const tileStyle = {
-      width: `${ 33.3 }%`
+      width: this.props.wide ? `${ 33.3 }%` : `100%`
     , display: 'inline-block'
     , padding: `${ gutter / 2 }%`
     }
@@ -84,7 +84,7 @@ export default class Press extends React.Component {
 
     return (
       <div style={[ footerMargin, greyBackground ]}>
-        <Banner text={ bannerText } image={ bannerImage } />
+        <Banner text={ bannerText } image={ bannerImage } wide={ this.props.wide } />
 
         <div style={ max }>
           <div>{ tilediv }</div>
