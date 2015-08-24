@@ -1,12 +1,12 @@
 import React from 'react'
-import { HEADER_HEIGHT } from '../style/style-consts.jsx'
+import { H2, HEADER_HEIGHT } from '../style/style-consts.jsx'
 
 export default class Banner {
   render () {
     const style = {
       backgroundImage: `url(${ this.props.image })`
     , backgroundSize: `cover`
-    , height: `calc(100% - ${ HEADER_HEIGHT })`
+    , height: this.props.wide ? `380px` : `calc(100% - ${ HEADER_HEIGHT })`
     , textAlign: `center`
     , color: `white`
     }
@@ -20,8 +20,8 @@ export default class Banner {
     return (
       <div style={ style }>
         <div style={ center }>
-          <div>{ this.props.text.big }</div>
-          <div>{ this.props.text.small }</div>
+          <div style={ { fontSize: `${ H2 }em` } }>{ this.props.text.big }</div>
+          <div style={ { marginTop: `20px` } }>{ this.props.text.small }</div>
         </div>
       </div>
     )
