@@ -65,6 +65,10 @@ const style = {
       backgroundColor: `#1C8DA7`
     }
   }
+
+, babyBlueGradient: {
+    background: `linear-gradient(to bottom, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%)`
+  }
 }
 
 export default style

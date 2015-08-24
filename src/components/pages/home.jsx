@@ -46,7 +46,7 @@ export default class Home {
             <WhichOneAreYou wide={ this.props.wide } />
             <OurServices wide={ this.props.wide } />
             <hr />
-            <OurPartnerships />
+            <OurPartnerships wide={ this.props.wide } />
           </div>
         </div>
 

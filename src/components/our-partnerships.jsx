@@ -15,7 +15,7 @@ export default class OurPartnerships {
     return (
       <div style={ style.wrapper }>
         <div style={ smallHeader }>Our Partnerships</div>
-        <Carousel />
+        <Carousel wide={ this.props.wide } />
       </div>
     )
   }

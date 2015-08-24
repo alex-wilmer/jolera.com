@@ -1,9 +1,11 @@
 import React from 'react'
+import Radium from 'radium'
 import HomeTile from './home-tile.jsx'
 import { SPACING, BLUE } from '../style/style-consts.jsx'
 import assign from 'object-assign'
 
-export default class HomeTiles {
+@Radium
+export default class HomeTiles extends React.Component {
   render () {
     const style = {
       wrapper: {
@@ -19,7 +21,6 @@ export default class HomeTiles {
       , height: `135px`
       , display: `inline-block`
       , color: `white`
-      , backgroundColor: BLUE
       , textAlign: `center`
       , verticalAlign: `top`
       , padding: `${ SPACING / 2 }px`
@@ -50,7 +51,12 @@ export default class HomeTiles {
         ? assign({}, style.tile, { marginLeft: SPACING })
         : style.tile
 
-      return <HomeTile text={ info.text } link={ info.link } style={ tileStyle } />
+      return (
+        <HomeTile
+          text={ info.text }
+          link={ info.link }
+          style={ tileStyle } />
+      )
     }
 
     return (
