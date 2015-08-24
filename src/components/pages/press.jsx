@@ -2,8 +2,8 @@ import React from 'react'
 import Radium from 'radium'
 import Banner from '../banner.jsx'
 import { footerMargin, max, greyBackground } from '../../style/style.jsx'
-import consts from '../../style/style-consts.jsx'
-import learnMore from '../learn-more.jsx'
+import { BLUE, BABY_BLUE } from '../../style/style-jsx'
+import LearnMore from '../learn-more.jsx'
 
 @Radium
 export default class Press extends React.Component {
@@ -19,11 +19,6 @@ export default class Press extends React.Component {
     , {
         title: `yar2`,
         text: `nar2`,
-        image: img
-      }
-    , {
-        title: `yar3`,
-        text: `nar3`,
         image: img
       }
     , {
@@ -78,14 +73,14 @@ export default class Press extends React.Component {
         padding: `${ 5 }px ${ 10 }px`
       }
     , heading: {
-        color: consts.BLUE
+        color: BLUE
       , fontSize: `${ 24 }px`
       }
     , description: {
-        color: consts.BLUE
+        color: BLUE
       }
     , readMore: {
-        color: consts.BABY_BLUE
+        color: BABY_BLUE
       }
     , loadMore: {
         padding: `${ 24 }px`
@@ -122,7 +117,7 @@ export default class Press extends React.Component {
           <div>{ tilediv }</div>
           <div style={ style.loadMore }>Load more</div>
         </div>
-        <learnMore />
+        <LearnMore />
       </div>
     )
   }
