@@ -3,72 +3,104 @@ import Radium from 'radium'
 import Banner from '../banner.jsx'
 import { footerMargin, max, greyBackground } from '../../style/style.jsx'
 import consts from '../../style/style-consts.jsx'
+import learnMore from '../learn-more.jsx'
 
 @Radium
 export default class Press extends React.Component {
   render () {
     const img = 'https://www.petfinder.com/wp-content/uploads/2012/11/140272627-grooming-needs-senior-cat-632x475.jpg'
-    const one = {
-      title: `yar1`,
-      text: `nar1`,
-      image: img
-    }
-    const two = {
-      title: `yar2`,
-      text: `nar2`,
-      image: img
-    }
-    const three = {
-      title: `yar3`,
-      text: `nar3`,
-      image: img
-    }
-    const tiles = [ one, two, three, one, two, three, one, two, three ]
-
-    const imgStyle = { 
-      width: `${ 100 }%`
-    , height: this.width 
-    }
+    
+    const tiles = [
+      {
+        title: `yar1`,
+        text: `nar1`,
+        image: img
+      }
+    , {
+        title: `yar2`,
+        text: `nar2`,
+        image: img
+      }
+    , {
+        title: `yar3`,
+        text: `nar3`,
+        image: img
+      }
+    , {
+        title: `yar3`,
+        text: `nar3`,
+        image: img
+      }
+    , {
+        title: `yar3`,
+        text: `nar3`,
+        image: img
+      }
+    , {
+        title: `yar3`,
+        text: `nar3`,
+        image: img
+      }
+    , {
+        title: `yar3`,
+        text: `nar3`,
+        image: img
+      }
+    , {
+        title: `yar3`,
+        text: `nar3`,
+        image: img
+      }
+    , {
+        title: `yar3`,
+        text: `nar3`,
+        image: img
+      }
+    ]
 
     const gutter = 2
 
-    const tileStyle = {
-      width: `${ 33.3 }%`
-    , display: 'inline-block'
-    , padding: `${ gutter / 2 }%`
-    }
-
-    const innerTileStyle = {
-      border: 'solid 1px grey'
-    , ':hover': { cursor: 'pointer' }
-    }
-
-    const textBoxStyle = {
-      padding: `${ 5 }px ${ 10 }px`
-    }
-
-    const headingStyle = {
-      color: consts.BLUE
-    , fontSize: `${ 24 }px`
-    }
-
-    const descriptionStyle = {
-      color: consts.BLUE
-    }
-
-    const readMoreStyle = {
-      color: consts.BABY_BLUE
+    const style = {
+      img: {
+        width: `${ 100 }%`
+      , height: this.width 
+      }
+    , tile: {
+        width: `${ 33.3 }%`
+      , display: 'inline-block'
+      , padding: `${ gutter / 2 }%`
+      }
+    , innerTile: {
+        border: 'solid 1px grey'
+      , ':hover': { cursor: 'pointer' }
+      }
+    , textBox: {
+        padding: `${ 5 }px ${ 10 }px`
+      }
+    , heading: {
+        color: consts.BLUE
+      , fontSize: `${ 24 }px`
+      }
+    , description: {
+        color: consts.BLUE
+      }
+    , readMore: {
+        color: consts.BABY_BLUE
+      }
+    , loadMore: {
+        padding: `${ 24 }px`
+      }
     }
 
     const tilediv = tiles.map((t, i) => {
       return (
-        <div style={ tileStyle }>
-          <div key={ i } style={ innerTileStyle }>
-            <div><img src={ t.image } style={ imgStyle } /></div>
-            <div style={ textBoxStyle }>
-              <div style={ headingStyle }>{ t.title }</div>
-              <div style={ descriptionStyle }>{ t.text }</div>
-              <div style={ readMoreStyle }>Read More</div>
+        <div style={ style.tile }>
+          <div key={ i } style={ style.innerTile }>
+            <div><img src={ t.image } style={ style.img } /></div>
+            <div style={ style.textBox }>
+              <div style={ style.heading }>{ t.title }</div>
+              <div style={ style.description }>{ t.text }</div>
+              <div style={ style.readMore }>Read More</div>
             </div>
           </div>
         </div>
@@ -88,7 +120,9 @@ export default class Press extends React.Component {
 
         <div style={ max }>
           <div>{ tilediv }</div>
+          <div style={ style.loadMore }>Load more</div>
         </div>
+        <learnMore />
       </div>
     )
   }
