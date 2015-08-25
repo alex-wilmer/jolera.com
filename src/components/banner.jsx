@@ -6,6 +6,7 @@ export default class Banner {
     const style = {
       backgroundImage: `url(${ this.props.image })`
     , backgroundSize: `cover`
+    , backgroundPosition: `center center`
     , height: this.props.wide ? `380px` : `calc(100% - ${ HEADER_HEIGHT }px)`
     , textAlign: `center`
     , color: `white`

@@ -43,7 +43,7 @@ export default class ProductsAndServices extends React.Component {
 
     return (
       <div style={ [this.props.footerMargin, greyBackground] }>
-        <Banner text={ data.banner } image='img/bg1.png' wide={ this.props.wide } />
+        <Banner text={ data.banner } image='img/servers.jpg' wide={ this.props.wide } />
 
         <div style={ [max, { padding: `20px` }] }>
           <div style={ [smallHeader, textCenter] }>{ data.main.header }</div>

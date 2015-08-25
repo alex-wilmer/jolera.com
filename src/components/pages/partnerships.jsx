@@ -30,7 +30,7 @@ export default class Partnerships extends React.Component {
     return (
       <div style={ [greyBackground, this.props.footerMargin] }>
 
-        <Banner text={ text } image='img/bg1.png' wide={ this.props.wide } />
+        <Banner text={ text } image='img/chairs.jpg' wide={ this.props.wide } />
 
         <div style={ [style.contentPadding, max] }>
           <div style={ style.mainText }>
