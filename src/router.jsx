@@ -29,6 +29,8 @@ import Partnerships from './components/pages/partnerships.jsx'
 import ContactUs from './components/pages/contact-us.jsx'
 import Search from './components/pages/search.jsx'
 import TermsAndConditions from './components/pages/terms-and-conditions.jsx'
+import PrivacyPolicy from './components/pages/privacy-policy.jsx'
+import SiteMap from './components/pages/site-map.jsx'
 import NotFound from './components/pages/not-found.jsx'
 
 const routes = (
@@ -41,6 +43,8 @@ const routes = (
     <Route path='/contact-us' handler={ ContactUs } />
     <Route path='/search' handler={ Search } />
     <Route path='/terms-and-conditions' handler={ TermsAndConditions } />
+    <Route path='/privacy-policy' handler={ PrivacyPolicy } />
+    <Route path='/site-map' handler={ SiteMap } />
     <DefaultRoute handler={ Home } />
     <NotFoundRoute handler={ NotFound } />
   </Route>

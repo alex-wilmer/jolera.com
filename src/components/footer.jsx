@@ -38,11 +38,11 @@ export default class Footer {
 
     , bottomLine: [
         { text: `Copyright © ${ new Date().getFullYear() } Jolera` }
-      , { text: `Home` }
-      , { text: `Contact Us` }
-      , { text: `Site Map` }
-      , { text: `Login` }
-      , { text: `Privacy Policy` }
+      , { text: `Home`, link: `#/` }
+      , { text: `Contact Us`, link: `#/contact-us` }
+      , { text: `Site Map`, link: `#/site-map` }
+      , { text: `Login`, link: `#/login` } // link to SP backend?
+      , { text: `Privacy Policy`, link: `#/privacy-policy` }
       , { text: `Terms and Conditions`, link: `#/terms-and-conditions` }
       ]
     }
