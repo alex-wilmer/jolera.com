@@ -16,7 +16,7 @@ import { BABY_BLUE } from '../../style/style-consts.jsx'
 export default class WhoWeAre extends React.Component {
   render () {
     const minHeight = {
-      minHeight: `280px`
+      minHeight: `200px`
     , position: `relative`
     , top: `-50px`
     , padding: `70px 20px 20px`

@@ -13,7 +13,7 @@ import {
 import { BABY_BLUE } from '../../style/style-consts.jsx'
 
 @Radium
-export default class WhatWeDo extends React.Component {
+export default class ProfessionalServices extends React.Component {
   render () {
     const minHeight = {
       minHeight: `200px`
@@ -23,11 +23,10 @@ export default class WhatWeDo extends React.Component {
     }
 
     const data = {
-      blueHeader: `Providing the ultimate user experience`
+      blueHeader: `Owning it end to end!`
     , blueParagraph:
-      `By coupling the different services we offer we can create and ultimate turnkey
-      customer experience that is tuned to making businesses more efficient, productive
-      and focused on their core compentencies and not internal I.T. challenges.`
+      `Performance driven, our team will dilligently ensure that your projects
+      are complete on time, on budget and to your total satisfaction.`
     }
 
     const babyBlueHeader = assign({}, smallHeader)
