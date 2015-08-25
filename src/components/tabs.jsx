@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react/addons'
 import Radium from 'radium'
 import assign from 'object-assign'
-import { textCenter } from '../style/style.jsx'
+import { ORANGE } from '../style/style-consts.jsx'
+import { textCenter, blueBackground, max } from '../style/style.jsx'
 
-class Tabs {
+@Radium
+class Tabs extends React.Component {
   render () {
     const style = {
       tabs: {
@@ -13,7 +15,20 @@ class Tabs {
       }
     }
 
-    return <div style={ style.tabs }>{ this.props.children }</div>
+    const self = this
+
+    const tabs = React.Children.map(this.props.children, (child, i) => {
+      return React.addons.cloneWithProps(child, {
+        activeTab: self.props.activeTab
+      , onSelect: self.props.onSelect
+      , index: i })
+    })
+
+    return (
+      <div style={ [max, style.tabs] }>
+        { tabs }
+      </div>
+    )
   }
 }
 
@@ -23,20 +38,59 @@ class Tab extends React.Component {
     const style = {
       tab: {
         backgroundColor: `white`
-      , padding: `50px`
+      , padding: `40px`
       , display: `inline-block`
       , width: `33.33%`
+      , borderBottom: `10px solid white`
       }
     }
 
-    const tabStyle = this.props.border
+    let tabStyle = this.props.border
       ? assign({}, style.tab, { borderLeft: `1px solid rgb(222, 222, 222)` })
       : style.tab
 
+    tabStyle = this.props.activeTab === this.props.index
+      ? assign({}, tabStyle, { borderBottom: `10px solid ${ ORANGE }` })
+      : tabStyle
+
     return (
-      <a style={ [tabStyle, textCenter] }>{ this.props.children }</a>
+      <a
+        onClick={ this.props.onSelect.bind(this, this.props.index) }
+        style={ [tabStyle, textCenter] }>
+        { this.props.children }
+      </a>
     )
   }
 }
 
-export { Tabs, Tab }
+@Radium
+class TabPanels extends React.Component {
+  render () {
+    const self = this
+
+    const tabPanels = React.Children.map(this.props.children, (child, i) => {
+      return React.addons.cloneWithProps(child, {
+        activeTab: self.props.activeTab
+      , index: i })
+    })
+
+    return <div>{ tabPanels }</div>
+  }
+}
+
+@Radium
+class TabPanel extends React.Component {
+  render () {
+    const active = {
+      display: this.props.activeTab === this.props.index ? `block` : `none`
+    }
+
+    return (
+      <div style={ active }>
+        <div>{ this.props.children }</div>
+      </div>
+    )
+  }
+}
+
+export { Tabs, Tab, TabPanels, TabPanel }

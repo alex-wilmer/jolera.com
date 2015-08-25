@@ -53,6 +53,7 @@ export default class HomeTiles extends React.Component {
 
       return (
         <HomeTile
+          key={ i }
           text={ info.text }
           link={ info.link }
           style={ tileStyle } />

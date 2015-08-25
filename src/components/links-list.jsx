@@ -52,7 +52,7 @@ export default class LinksList extends React.Component {
       if (i || this.state.navOpen) {
         style.links = assign({}, style.links, { paddingLeft: `20px` })
       }
-      return <Link to={ link.path } style={ style.links }>{ link.name }</Link>
+      return <Link key={ i } to={ link.path } style={ style.links }>{ link.name }</Link>
     })
 
     const navIcon = (

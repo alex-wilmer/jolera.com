@@ -94,7 +94,7 @@ export default class Press extends React.Component {
         </div>
 
         <div style={ textCenter }>
-          <a style={ [button, babyBlue] }>Load more</a>
+          <a style={ [button, babyBlue] }>LOAD MORE</a>
         </div>
         <div style={ style.evenBottomPad }></div>
 

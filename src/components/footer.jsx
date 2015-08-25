@@ -83,9 +83,9 @@ export default class Footer {
       fontSize: `2em`
     }
 
-    const mainLinks = data.mainLinks.map(l => {
+    const mainLinks = data.mainLinks.map((l, i) => {
       return (
-        <div style={ this.props.wide ? linkStyleWide : linkStyle }>
+        <div key={ i } style={ this.props.wide ? linkStyleWide : linkStyle }>
           <a style={ headerLinkStyle }>{ l.header }</a>
           { this.props.wide ? l.subLinks.map(sl => <a style={ subLinkStyle }>{ sl }</a>) : null }
         </div>
@@ -100,14 +100,14 @@ export default class Footer {
         : socialLinkStyleBase
 
       return (
-        <a style={ this.props.wide ? socialLinkStyleWide : socialLinkStyle }>
+        <a key={ i } style={ this.props.wide ? socialLinkStyleWide : socialLinkStyle }>
           { l.icon }
         </a>
       )
     })
 
-    const bottomLine = data.bottomLine.map(l => {
-      return <a>{ l.text }</a>
+    const bottomLine = data.bottomLine.map((l, i) => {
+      return <a key={ i }>{ l.text }</a>
     })
 
     return (
