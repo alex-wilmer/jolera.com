@@ -17,20 +17,30 @@ export default class WhichOneAreYou {
       , width: this.props.wide ? `calc(50% - ${ SPACING / 2 }px)` : `100%`
       , height: `250px`
       , padding: `30px`
-      , backgroundColor: `blue`
       , color: `white`
       }
     , header: {
         fontSize: `${ H2 }em`
       }
+    , description: {
+        fontWeight: 300
+      , fontSize: `1.1em`
+      , paddingTop: `20px`
+      }
     }
 
     const data = [{
       header: `CUSTOMERS`
-    , description: `Learn more about...`
+    , description:
+        `Learn more about our offerings and
+         what we do to ensure the ultimate
+         service experience`
     }, {
       header: `RESELLERS`
-    , description: `Learn more about...`
+    , description:
+        `Learn how you can expand your current
+         technology offerings by easily bolting
+         on items from our service menu`
     }]
 
     const whichOneAreYouTiles = data.map((m, i) => {
@@ -47,7 +57,8 @@ export default class WhichOneAreYou {
           header={ m.header }
           tileStyle={ tileStyle }
           headerStyle={ style.header }
-          description={ m.description } />
+          description={ m.description }
+          descriptionStyle={ style.description } />
       )
     })
 
