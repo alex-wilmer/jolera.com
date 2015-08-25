@@ -3,8 +3,21 @@ import Radium from 'radium'
 import { max, greyBackground, textCenter, smallHeader } from '../../style/style.jsx'
 import ContactForm from '../contact-form.jsx'
 
+import { Tabs, Tab, TabPanels, TabPanel } from '../tabs.jsx'
+import LearnMore from '../learn-more.jsx'
+import Sales from '../panels/sales.jsx'
+import Services from '../panels/services.jsx'
+import CustomerPortals from '../panels/customer-portals.jsx'
+
 @Radium
-export default class ContactUs {
+export default class ContactUs extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = { activeTab: 0 }
+    this.selectTab = this.selectTab.bind(this)
+  }
+
   render () {
     const mapStyle = {
       width: `100%`
@@ -17,6 +30,13 @@ export default class ContactUs {
 
     const margin = {
       margin: `50px 0`
+    }
+
+    const data = {
+      tabs:
+      [ { title: `Sales` }
+      , { title: `Services` }
+      , { title: `Customer Portals`} ]
     }
 
     return (
@@ -40,7 +60,35 @@ export default class ContactUs {
             </div>
           </div>
         </div>
+
+        <Tabs onSelect={ this.selectTab } activeTab={ this.state.activeTab }>
+          { data.tabs.map((t, i) => {
+            if (i) return <Tab key={ i } border={ true }>{ t }</Tab>
+            else return <Tab key={ i }>{ t }</Tab>
+          }) }
+        </Tabs>
+
+        <TabPanels activeTab={ this.state.activeTab }>
+          <TabPanel>
+            <Sales />
+          </TabPanel>
+
+          <TabPanel>
+            <Services />
+          </TabPanel>
+
+          <TabPanel>
+            <CustomerPortals />
+          </TabPanel>
+        </TabPanels>
+
+        <LearnMore />
+
       </div>
     )
+  }
+
+  selectTab (i) {
+    this.setState({ activeTab: i })
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import Radium from 'radium'
+import { button, babyBlue } from '../style/style.jsx'
 
 @Radium
 export default class ContactForm extends React.Component {
@@ -22,6 +23,10 @@ export default class ContactForm extends React.Component {
       height: `200px`
     }
 
+    const alignLeft = {
+      textAlign: `left`
+    }
+
     return (
       <div>
         <input key='1' placeholder='I have a message for..' style={ inputStyle } />
@@ -35,6 +40,7 @@ export default class ContactForm extends React.Component {
           key='8'
           placeholder='Type your message here..'
           style={ [inputStyle, marginTop, height] } />
+        <div key='9' style={ alignLeft }><a style={ [button, babyBlue] }>Send</a></div>
       </div>
     )
   }
