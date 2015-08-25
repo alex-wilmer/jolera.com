@@ -43,7 +43,7 @@ export default class Footer {
       , { text: `Site Map` }
       , { text: `Login` }
       , { text: `Privacy Policy` }
-      , { text: `Term and Conditions` }
+      , { text: `Terms and Conditions`, link: `#/terms-and-conditions` }
       ]
     }
 
@@ -92,8 +92,14 @@ export default class Footer {
     const bottomLineStyle = {
       color: `grey`
     , textAlign: `center`
-    , padding: `50px 10px`
+    , padding: `40px 10px`
     }
+
+    const bottomLinkStyle = {
+      color: `grey`
+    }
+
+    const bottomLineFontSize = ( this.props.wide ? {} : { fontSize: `130%` } )
 
     const mainLinks = data.mainLinks.map((l, i) => {
       return (
@@ -120,8 +126,8 @@ export default class Footer {
 
     const bottomLine = data.bottomLine.map((l, i) => {
       return (
-        <span>
-          <a key={ i }>{ l.text }</a>
+        <span style={ bottomLineFontSize }>
+          <a key={ i } href={ l.link } style={ bottomLinkStyle }>{ l.text }</a>
           { i !== data.bottomLine.length - 1 ? <span> | </span> : '' }
         </span>
       )

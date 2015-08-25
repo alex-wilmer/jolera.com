@@ -3,6 +3,9 @@ import Radium from 'radium'
 import Banner from '../banner.jsx'
 import LearnMore from '../learn-more.jsx'
 
+import { SPACING } from '../../style/style-consts.jsx'
+import { smallHeader, footerMargin, greyBackground, max, textCenter } from '../../style/style.jsx'
+
 @Radium
 export default class TermsAndConditions extends React.Component {
   render () {
@@ -30,7 +33,6 @@ export default class TermsAndConditions extends React.Component {
 
         <div style={ [style.contentPadding, max] }>
           <div style={ style.mainText }>
-            <div style={ [smallHeader, textCenter] }>Working together with others to fast track your success</div>
             <div>Jolera takes partnerships seriously. We work closely with infustry innovators to achieve the critical mass...</div>
           </div>
         </div>
