@@ -44,6 +44,12 @@ const style = {
   , margin: `${ consts.SPACING }px 0 ${ consts.SPACING }`
   }
 
+, smallSubHeader: {
+    fontSize: `${ consts.H4 }em`
+  , fontStyle: `italic`
+  , margin: `${ consts.SPACING }px 0 ${ consts.SPACING }`
+  }
+
 , button: {
     color: `white`
   , padding: `${ consts.SPACING / 2 }px ${ consts.SPACING }px`

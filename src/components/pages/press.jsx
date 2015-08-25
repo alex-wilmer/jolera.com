@@ -27,11 +27,11 @@ export default class Press extends React.Component {
     const tiles = [ one, two, three, one, two, three, one, two, three ]
 
     const xTileDivPadding = 30
-    const gutterPadding = 0.5
+    const gutterPadding = 1
 
     const style = {
       tileDiv: {
-        padding: this.props.wide ? `${ xTileDivPadding }px 0px` : `30px 60px`
+        padding: this.props.wide ? `${ xTileDivPadding }px 0px` : `30px 80px`
       }
     , tile: {
         width: this.props.wide ? `${ 33.3 }%` : `100%`
