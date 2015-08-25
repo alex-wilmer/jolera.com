@@ -2,17 +2,10 @@ import React from 'react/addons'
 import Radium from 'radium'
 import assign from 'object-assign'
 import { ORANGE } from '../style/style-consts.jsx'
-import { textCenter } from '../style/style.jsx'
+import { textCenter, blueBackground, max } from '../style/style.jsx'
 
 @Radium
 class Tabs extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.state = { activeTab: 0 }
-    this.select = this.select.bind(this)
-  }
-
   render () {
     const style = {
       tabs: {
@@ -22,24 +15,20 @@ class Tabs extends React.Component {
       }
     }
 
-    var self = this
+    const self = this
 
-    var children = React.Children.map(this.props.children, (child, i) => {
+    const tabs = React.Children.map(this.props.children, (child, i) => {
       return React.addons.cloneWithProps(child, {
-        activeTab: self.state.activeTab
-      , select: self.select
+        activeTab: self.props.activeTab
+      , onSelect: self.props.onSelect
       , index: i })
     })
 
     return (
-      <div select={ this.select } style={ style.tabs }>
-        { children }
+      <div style={ [max, style.tabs] }>
+        { tabs }
       </div>
     )
-  }
-
-  select (i) {
-    this.setState({ activeTab: i })
   }
 }
 
@@ -66,7 +55,7 @@ class Tab extends React.Component {
 
     return (
       <a
-        onClick={ this.props.select.bind(this, this.props.index) }
+        onClick={ this.props.onSelect.bind(this, this.props.index) }
         style={ [tabStyle, textCenter] }>
         { this.props.children }
       </a>
@@ -74,4 +63,34 @@ class Tab extends React.Component {
   }
 }
 
-export { Tabs, Tab }
+@Radium
+class TabPanels extends React.Component {
+  render () {
+    const self = this
+
+    const tabPanels = React.Children.map(this.props.children, (child, i) => {
+      return React.addons.cloneWithProps(child, {
+        activeTab: self.props.activeTab
+      , index: i })
+    })
+
+    return <div>{ tabPanels }</div>
+  }
+}
+
+@Radium
+class TabPanel extends React.Component {
+  render () {
+    const active = {
+      display: this.props.activeTab === this.props.index ? `block` : `none`
+    }
+
+    return (
+      <div style={ active }>
+        <div>{ this.props.children }</div>
+      </div>
+    )
+  }
+}
+
+export { Tabs, Tab, TabPanels, TabPanel }

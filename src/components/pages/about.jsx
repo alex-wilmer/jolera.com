@@ -10,11 +10,20 @@ import {
 , textCenter } from '../../style/style.jsx'
 import { BABY_BLUE } from '../../style/style-consts.jsx'
 
-import { Tabs, Tab } from '../tabs.jsx'
+import { Tabs, Tab, TabPanels, TabPanel } from '../tabs.jsx'
 import LearnMore from '../learn-more.jsx'
+import WhoWeAre from '../panels/who-we-are.jsx'
+import WhatWeDo from '../panels/what-we-do.jsx'
 
 @Radium
 export default class About extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = { activeTab: 0 }
+    this.selectTab = this.selectTab.bind(this)
+  }
+
   render () {
     const text = {
       banner: {
@@ -50,16 +59,6 @@ export default class About extends React.Component {
       padding: `20px`
     }
 
-    const minHeight = {
-      minHeight: `300px`
-    , paddingTop: `80px`
-    , position: `relative`
-    , top: `-80px`
-    }
-
-    const babyBlueHeader = assign({}, smallHeader)
-    babyBlueHeader.color = BABY_BLUE
-
     return (
       <div style={ [greyBackground, this.props.footerMargin] }>
         <Banner text={ text.banner } image='img/bg1.png' wide={ this.props.wide } />
@@ -69,23 +68,35 @@ export default class About extends React.Component {
           <p>{ text.main.paragraphs }</p>
 
           <hr style={ { margin: `20px 0` } }/>
-
-          <Tabs>
-            { data.tabs.map((t, i) => {
-              if (i) return <Tab key={ i } border={ true }>{ t }</Tab>
-              else return <Tab key={ i }>{ t }</Tab>
-            }) }
-          </Tabs>
         </div>
 
-        <div style={ [blueBackground, minHeight] }>
-          <div style={ [max, textCenter] }>
-            <div style={ babyBlueHeader }>Passion, Trust, Success, Loyalty</div>
-          </div>
-        </div>
+        <Tabs onSelect={ this.selectTab } activeTab={ this.state.activeTab }>
+          { data.tabs.map((t, i) => {
+            if (i) return <Tab key={ i } border={ true }>{ t }</Tab>
+            else return <Tab key={ i }>{ t }</Tab>
+          }) }
+        </Tabs>
+
+        <TabPanels activeTab={ this.state.activeTab }>
+          <TabPanel>
+            <WhoWeAre />
+          </TabPanel>
+
+          <TabPanel>
+            <WhatWeDo />
+          </TabPanel>
+
+          <TabPanel>
+            <div>Panel 3!</div>
+          </TabPanel>
+        </TabPanels>
 
         <LearnMore />
       </div>
     )
+  }
+
+  selectTab (i) {
+    this.setState({ activeTab: i })
   }
 }
