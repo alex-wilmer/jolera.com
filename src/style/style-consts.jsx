@@ -1,4 +1,4 @@
-const consts = {
+export default {
   // DIMENSIONS
   MAX_WIDTH: 1000
 , HEADER_HEIGHT: 60
@@ -16,5 +16,3 @@ const consts = {
 , H3: 1.5
 , H4: 1.3
 }
-
-export default consts

@@ -1,4 +1,4 @@
-const mixins = {
+export default {
   trueHeight: height => {
     return {
       height: `${ height }px`
@@ -23,5 +23,3 @@ const mixins = {
     }
   }
 }
-
-export default mixins

@@ -20,6 +20,7 @@
   "dependencies": {
     "object-assign": "^4.0.1",
     "react": "^0.13.3",
-    "react-router": "^0.13.3"
+    "react-router": "^0.13.3",
+    "react-slick": "^0.7.0"
   }
 }

@@ -2,7 +2,7 @@ import assign from 'object-assign'
 import consts from './style-consts.jsx'
 import mixins from './style-mixins.jsx'
 
-const style = {
+export default {
   max: {
     maxWidth: `${ consts.MAX_WIDTH }px`
   , margin: `0 auto`
@@ -28,6 +28,10 @@ const style = {
 
 , footerMargin: {
     marginBottom: `${ consts.FOOTER_HEIGHT }px`
+  }
+
+, blueBackground: {
+    backgroundColor: consts.BLUE
   }
 
 , greyBackground: {
@@ -70,5 +74,3 @@ const style = {
     background: `linear-gradient(to bottom, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%)`
   }
 }
-
-export default style

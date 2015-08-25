@@ -6,7 +6,7 @@ import { H3 } from '../style/style-consts.jsx'
 import { pos } from '../style/style-mixins.jsx'
 
 @Radium
-class LearnMore extends React.Component {
+export default class LearnMore extends React.Component {
   render () {
     const background = {
       backgroundImage: `url(img/bg1.png)`
@@ -33,5 +33,3 @@ class LearnMore extends React.Component {
     )
   }
 }
-
-export default LearnMore
