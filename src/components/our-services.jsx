@@ -64,12 +64,12 @@ export default class OurServices extends React.Component {
         : tileBaseStyle
 
       return (
-        <div style={ this.props.wide ? tileStyleWide : tileStyle }>
+        <a style={ this.props.wide ? tileStyleWide : tileStyle }>
           <img src={ m.icon } />
           <div style={ smallHeader }>{ m.title }</div>
-          <div>{ m.description }</div>
+          <div style={ { fontSize: `0.85em` } }>{ m.description }</div>
           <div style={ smallHeader }>{ m.slogan }</div>
-        </div>
+        </a>
       )
     })
 
