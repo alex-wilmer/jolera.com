@@ -37,7 +37,13 @@ export default class Footer {
       ]
 
     , bottomLine: [
-        { text: `Copyright &copy; ${ new Date().getFullYear() } Jolera` }
+        { text: `Copyright © ${ new Date().getFullYear() } Jolera` }
+      , { text: `Home` }
+      , { text: `Contact Us` }
+      , { text: `Site Map` }
+      , { text: `Login` }
+      , { text: `Privacy Policy` }
+      , { text: `Term and Conditions` }
       ]
     }
 
@@ -83,6 +89,12 @@ export default class Footer {
       fontSize: `2em`
     }
 
+    const bottomLineStyle = {
+      color: `grey`
+    , textAlign: `center`
+    , padding: `50px 10px`
+    }
+
     const mainLinks = data.mainLinks.map((l, i) => {
       return (
         <div key={ i } style={ this.props.wide ? linkStyleWide : linkStyle }>
@@ -107,7 +119,12 @@ export default class Footer {
     })
 
     const bottomLine = data.bottomLine.map((l, i) => {
-      return <a key={ i }>{ l.text }</a>
+      return (
+        <span>
+          <a key={ i }>{ l.text }</a>
+          { i !== data.bottomLine.length - 1 ? <span> | </span> : '' }
+        </span>
+      )
     })
 
     return (
@@ -121,7 +138,7 @@ export default class Footer {
             </div>
           </div>
 
-          <div>
+          <div style={ bottomLineStyle }>
             { bottomLine }
           </div>
         </div>
