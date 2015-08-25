@@ -7,7 +7,7 @@ import HomeTiles from './home-tiles.jsx'
 export default class HomeHero {
   render () {
     const backgroundImage = {
-      backgroundImage: `url(img/bg1.png)`
+      backgroundImage: `url(img/homehero.jpg)`
     , backgroundSize: `cover`
     , backgroundPosition: `center center`
     , height:  this.props.wide ? `380px` : `calc(100% - ${ HEADER_HEIGHT }px)`

@@ -14,6 +14,7 @@ import { Tabs, Tab, TabPanels, TabPanel } from '../tabs.jsx'
 import LearnMore from '../learn-more.jsx'
 import WhoWeAre from '../panels/who-we-are.jsx'
 import WhatWeDo from '../panels/what-we-do.jsx'
+import WhereWeAre from '../panels/where-we-are.jsx'
 
 @Radium
 export default class About extends React.Component {
@@ -87,7 +88,7 @@ export default class About extends React.Component {
           </TabPanel>
 
           <TabPanel>
-            <div>Panel 3!</div>
+            <WhereWeAre />
           </TabPanel>
         </TabPanels>
 

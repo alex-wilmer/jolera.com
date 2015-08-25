@@ -37,10 +37,10 @@ export default class HomeTiles extends React.Component {
       : style.wrapper
 
     const tiles = [
-        { text: 'PRODUCTS AND SERVICES', link: '/' }
-      , { text: 'ABOUT US', link: '/' }
-      , { text: 'PRESS', link: '/' }
-      , { text: 'SOCIAL RESPONSIBILITY', link: '/' }
+        { text: 'PRODUCTS AND SERVICES', link: '/', img: `img/icons/fork-knife.png` }
+      , { text: 'ABOUT US', link: '/', img: `img/icons/avatar.png` }
+      , { text: 'PRESS', link: '/', img: `img/icons/news.png` }
+      , { text: 'SOCIAL RESPONSIBILITY', link: '/', img: `img/icons/leaf.png` }
     ]
 
     const topTiles = tiles.filter((info, i) => i < 2).map(mapTile)
@@ -56,6 +56,7 @@ export default class HomeTiles extends React.Component {
           key={ i }
           text={ info.text }
           link={ info.link }
+          img={ info.img }
           style={ tileStyle } />
       )
     }

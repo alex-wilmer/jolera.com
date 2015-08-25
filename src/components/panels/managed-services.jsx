@@ -13,7 +13,7 @@ import {
 import { BABY_BLUE } from '../../style/style-consts.jsx'
 
 @Radium
-export default class WhatWeDo extends React.Component {
+export default class ManagedServices extends React.Component {
   render () {
     const minHeight = {
       minHeight: `200px`
@@ -23,11 +23,17 @@ export default class WhatWeDo extends React.Component {
     }
 
     const data = {
-      blueHeader: `Providing the ultimate user experience`
+      blueHeader: `We own its health, performance and uptime`
     , blueParagraph:
-      `By coupling the different services we offer we can create and ultimate turnkey
-      customer experience that is tuned to making businesses more efficient, productive
-      and focused on their core compentencies and not internal I.T. challenges.`
+      `Demands on I.T. service and availability in today's fast paced working world
+      have forced organizations to evaluate different technologies and services
+      to assist them in meeting high service standards. Jolera's Managed Service
+      department has created a product portfolio list to provide various sized
+      organizations with a series of offerings that can meet their I.T.
+      requirements. Jolera's Managed Services portfolio is built around a
+      proactive mentality designed to protect, service and ensure a high
+      availability platform.`
+
     }
 
     const babyBlueHeader = assign({}, smallHeader)

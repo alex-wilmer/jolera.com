@@ -6,14 +6,15 @@ import LinksList from './links-list.jsx'
 
 export default class Header {
   render () {
-    const textColor = {
-      color: `white`
+    const padding = {
+      padding: `12px 0`
+    , display: `inline-block`
     }
 
     return (
       <div style={ header }>
         <div style={ max }>
-          <Link to='/' style={ textColor }>jolera.com</Link>
+          <Link to='/'><img style={ padding } src='img/nav-logo.png' /></Link>
           <LinksList links={ this.props.links } wide={ this.props.wide } />
         </div>
       </div>

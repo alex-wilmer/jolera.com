@@ -6,9 +6,14 @@ import { babyBlueGradient } from '../style/style.jsx'
 @Radium
 export default class HomeTile extends React.Component {
   render () {
+    const iconStyle = {
+      display: `block`
+    , margin: `15px auto`
+    }
+
     return (
       <a style={ [this.props.style, babyBlueGradient] }>
-        <img src={ this.props.src } />
+        <img style={ iconStyle } src={ this.props.img } />
         <span>{ this.props.text }</span>
       </a>
     )
