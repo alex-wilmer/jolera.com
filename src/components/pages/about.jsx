@@ -40,7 +40,10 @@ export default class About extends React.Component {
     }
 
     const data = {
-      tabs: [`Who We Are`, `What We Do`, `Where We Are`]
+      tabs:
+      [ { title: `Who We Are` }
+      , { title: `What We Do` }
+      , { title: `Where We Are`} ]
     }
 
     const padding = {
@@ -69,8 +72,8 @@ export default class About extends React.Component {
 
           <Tabs>
             { data.tabs.map((t, i) => {
-              if (i) return <Tab border={ true }>{ t }</Tab>
-              else return <Tab>{ t }</Tab>
+              if (i) return <Tab key={ i } border={ true }>{ t }</Tab>
+              else return <Tab key={ i }>{ t }</Tab>
             }) }
           </Tabs>
         </div>

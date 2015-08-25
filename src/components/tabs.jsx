@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react/addons'
 import Radium from 'radium'
 import assign from 'object-assign'
+import { ORANGE } from '../style/style-consts.jsx'
 import { textCenter } from '../style/style.jsx'
 
-class Tabs {
+@Radium
+class Tabs extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = { activeTab: 0 }
+    this.select = this.select.bind(this)
+  }
+
   render () {
     const style = {
       tabs: {
@@ -13,7 +22,24 @@ class Tabs {
       }
     }
 
-    return <div style={ style.tabs }>{ this.props.children }</div>
+    var self = this
+
+    var children = React.Children.map(this.props.children, (child, i) => {
+      return React.addons.cloneWithProps(child, {
+        activeTab: self.state.activeTab
+      , select: self.select
+      , index: i })
+    })
+
+    return (
+      <div select={ this.select } style={ style.tabs }>
+        { children }
+      </div>
+    )
+  }
+
+  select (i) {
+    this.setState({ activeTab: i })
   }
 }
 
@@ -23,18 +49,27 @@ class Tab extends React.Component {
     const style = {
       tab: {
         backgroundColor: `white`
-      , padding: `50px`
+      , padding: `40px`
       , display: `inline-block`
       , width: `33.33%`
+      , borderBottom: `10px solid white`
       }
     }
 
-    const tabStyle = this.props.border
+    let tabStyle = this.props.border
       ? assign({}, style.tab, { borderLeft: `1px solid rgb(222, 222, 222)` })
       : style.tab
 
+    tabStyle = this.props.activeTab === this.props.index
+      ? assign({}, tabStyle, { borderBottom: `10px solid ${ ORANGE }` })
+      : tabStyle
+
     return (
-      <a style={ [tabStyle, textCenter] }>{ this.props.children }</a>
+      <a
+        onClick={ this.props.select.bind(this, this.props.index) }
+        style={ [tabStyle, textCenter] }>
+        { this.props.children }
+      </a>
     )
   }
 }

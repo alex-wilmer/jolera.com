@@ -54,6 +54,7 @@ export default class WhichOneAreYou {
 
       return (
         <WhichOneAreYouTile
+          key={ i }
           header={ m.header }
           tileStyle={ tileStyle }
           headerStyle={ style.header }
