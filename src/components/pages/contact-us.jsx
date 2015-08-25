@@ -32,12 +32,35 @@ export default class ContactUs extends React.Component {
       margin: `50px 0`
     }
 
+    const office =  {
+      width: `50%`
+    , float: `right`
+    , padding: `0px 60px`
+    , textAlign: `left`
+    }
+
     const data = {
       tabs:
       [ { title: `Sales` }
       , { title: `Services` }
       , { title: `Customer Portals`} ]
+
+    , officeInfo: {
+        branch: `Head Office`
+      , location: `Toronto`
+      , name: `Jolera Inc.`
+      , address1: `777 Richmond St. West, Unit 2`
+      , address2: `Toronto, Ontario, Canada`
+      , postal: `M6J 0C2`
+      , phone: `416.410.1011`
+      }
     }
+
+    const officeInfo = Object.keys(data.officeInfo).map(key => {
+      return <div>{ data.officeInfo[key] }</div>
+    })
+
+
 
     return (
       <div style={ [this.props.footerMargin, greyBackground] }>
@@ -55,6 +78,8 @@ export default class ContactUs extends React.Component {
               </div>
 
               <hr style={ margin } />
+
+              <div style={ office }>{ officeInfo }</div>
 
               <ContactForm />
             </div>

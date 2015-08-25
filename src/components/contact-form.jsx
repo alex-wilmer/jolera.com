@@ -35,12 +35,11 @@ export default class ContactForm extends React.Component {
         <input key='4' placeholder='* Email' style={ [inputStyle, marginTop] } />
         <input key='5' placeholder='Phone number' style={ [inputStyle, marginTop] } />
         <input key='6' placeholder='Company' style={ [inputStyle, marginTop] } />
-        <input key='7' placeholder='Company' style={ [inputStyle, marginTop] } />
         <textarea
-          key='8'
+          key='7'
           placeholder='Type your message here..'
           style={ [inputStyle, marginTop, height] } />
-        <div key='9' style={ alignLeft }><a style={ [button, babyBlue] }>Send</a></div>
+        <div key='8' style={ alignLeft }><a style={ [button, babyBlue] }>Send</a></div>
       </div>
     )
   }
