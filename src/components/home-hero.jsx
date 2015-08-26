@@ -3,11 +3,12 @@ import assign from 'object-assign'
 import { SPACING, HEADER_HEIGHT } from '../style/style-consts.jsx'
 import { max } from '../style/style.jsx'
 import HomeTiles from './home-tiles.jsx'
+import PATH from '../path.jsx'
 
 export default class HomeHero {
   render () {
     const backgroundImage = {
-      backgroundImage: `url(img/homehero.jpg)`
+      backgroundImage: `url(${ PATH }/img/homehero.jpg)`
     , backgroundSize: `cover`
     , backgroundPosition: `center center`
     , height:  this.props.wide ? `380px` : `calc(100% - ${ HEADER_HEIGHT }px)`

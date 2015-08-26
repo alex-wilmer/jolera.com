@@ -4,12 +4,13 @@ import Radium from 'radium'
 import { button, orange } from '../style/style.jsx'
 import { H2 } from '../style/style-consts.jsx'
 import { pos } from '../style/style-mixins.jsx'
+import PATH from '../path.jsx'
 
 @Radium
 export default class LearnMore extends React.Component {
   render () {
     const background = {
-      backgroundImage: `url(img/dudes-back.jpg)`
+      backgroundImage: `url(${ PATH }/img/dudes-back.jpg)`
     , backgroundSize: `cover`
     , backgroundPosition: `center center`
     , height: `350px`

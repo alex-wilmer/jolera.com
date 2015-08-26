@@ -5,20 +5,20 @@ import LearnMore from '../learn-more.jsx'
 import { footerMargin, max, greyBackground, button, babyBlue, textCenter } from '../../style/style.jsx'
 import { BLUE, BABY_BLUE } from '../../style/style-consts.jsx'
 
+import { getItems } from '../../sharepoint-services/list.jsx'
+
 @Radium
 export default class Press extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = { articles: [] }
+
+    getItems('Articles', { site: _spPageContextInfo.webTitle })
+      .then(data => this.setState({ articles: data }))
+  }
+
   render () {
-    const img =
-      'http://tributevideo.com/fslides/slides/photography/tribute_video_photography_slides34.jpg'
-
-    const one = {
-      title: `Article Title`,
-      text: `lorem ipsum..`,
-      image: img
-    }
-
-    const tiles = [ one, one, one, one ]
-
     const xTileDivPadding = 30
     const gutterPadding = 1
 
@@ -56,20 +56,32 @@ export default class Press extends React.Component {
       }
     }
 
-    const tilediv = tiles.map((t, i) => {
-      return (
-        <div style={ style.tile }>
-          <div key={ i } style={ style.innerTile }>
-            <div><img src={ t.image } style={ style.img } /></div>
-            <div style={ style.textBox }>
-              <div style={ style.heading }>{ t.title }</div>
-              <div style={ style.description }>{ t.text }</div>
-              <div style={ style.readMore }>Read More</div>
+    // const tilediv = this.state.articles.map((t, i) => {
+    //   return (
+    //     <div style={ style.tile }>
+    //       <div key={ i } style={ style.innerTile }>
+    //         <div><img src={ t.image } style={ style.img } /></div>
+    //         <div style={ style.textBox }>
+    //           <div style={ style.heading }>{ t.title }</div>
+    //           <div style={ style.description }>{ t.text }</div>
+    //           <div style={ style.readMore }>Read More</div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   )
+    // })
+
+
+      const tilediv = this.state.articles.map((t, i) => {
+        return (
+          <div style={ style.tile }>
+            <div key={ i } style={ style.innerTile }>
+              <div>{ t.Title }</div>
             </div>
           </div>
-        </div>
-      )
-    })
+        )
+      })
+    
 
     const bannerText = {
       big: `Featured Article`

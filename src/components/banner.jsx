@@ -1,10 +1,11 @@
 import React from 'react'
 import { H2, H4, HEADER_HEIGHT } from '../style/style-consts.jsx'
+import PATH from '../path.jsx'
 
 export default class Banner {
   render () {
     const style = {
-      backgroundImage: `url(${ this.props.image })`
+      backgroundImage: `url(${ PATH }/${ this.props.image })`
     , backgroundSize: `cover`
     , backgroundPosition: `center center`
     , height: this.props.wide ? `380px` : `calc(100% - ${ HEADER_HEIGHT }px)`

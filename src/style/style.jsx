@@ -45,7 +45,7 @@ export default {
 , smallHeader: {
     fontSize: `${ consts.H4 }em`
   , color: `${ consts.BLUE }`
-  , margin: `${ consts.SPACING }px 0 ${ consts.SPACING }`
+  , margin: `${ consts.SPACING }px 0 ${ consts.SPACING }px`
   }
 
 , smallSubHeader: {

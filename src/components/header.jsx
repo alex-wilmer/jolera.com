@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { header, max } from '../style/style.jsx'
+import PATH from '../path.jsx'
 
 import LinksList from './links-list.jsx'
 
@@ -14,7 +15,10 @@ export default class Header {
     return (
       <div style={ header }>
         <div style={ max }>
-          <Link to='/'><img style={ padding } src='img/nav-logo.png' /></Link>
+          <Link to='/'>
+            <img style={ padding } src={ `${ PATH }/img/nav-logo.png` } />
+          </Link>
+          
           <LinksList links={ this.props.links } wide={ this.props.wide } />
         </div>
       </div>

@@ -3,6 +3,7 @@ import Radium from 'radium'
 import assign from 'object-assign'
 import { SPACING, BLUE } from '../style/style-consts.jsx'
 import { textCenter, smallHeader, button, babyBlue } from '../style/style.jsx'
+import PATH from '../path.jsx'
 
 @Radium
 export default class OurServices extends React.Component {
@@ -30,7 +31,7 @@ export default class OurServices extends React.Component {
           `Providing complete peace of mind, care and support for all your
           infrastructure elements`
       , slogan: `Experience Tranquility`
-      , icon: `img/icons/forkknife-service.png`
+      , icon: `${ PATH }/img/icons/forkknife-service.png`
       }
     , {
         title: `Cloud Services`
@@ -38,7 +39,7 @@ export default class OurServices extends React.Component {
           `Leveraging our dedicated and private infrastructure services for easy
           integration, scaling and extension of your I.T. needs`
       , slogan: `Be Cloud Ready!`
-      , icon: `img/icons/cloud-service.png`
+      , icon: `${ PATH }/img/icons/cloud-service.png`
       }
     , {
         title: `Professional Services`
@@ -46,7 +47,7 @@ export default class OurServices extends React.Component {
           `Turnkey consulting and implementation teams that own customer visions
           and needs`
       , slogan: `Experience Delivery`
-      , icon: `img/icons/headset-service.png`
+      , icon: `${ PATH }/img/icons/headset-service.png`
       }
     ]
 
@@ -77,6 +78,7 @@ export default class OurServices extends React.Component {
       <div style={ wrapper }>
         <div style={ smallHeader }>Our Services</div>
         { tiles }
+        <div>&nbsp;</div>
         <div><a style={ [button, babyBlue] }>VIEW ALL SERVICES</a></div>
       </div>
     )

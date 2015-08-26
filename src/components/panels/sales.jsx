@@ -25,8 +25,8 @@ export default class Sales extends React.Component {
     const data = {
       blueHeader: `Experience Ultimate and contact us today!`
     , blueParagraph:
-        `We promise to listen first and then work with you to come up with 
-        your best solution.  Our team is always happy to engage - reach us 
+        `We promise to listen first and then work with you to come up with
+        your best solution.  Our team is always happy to engage - reach us
         by email or phone today!`
     , blueParagraph2: `Contact us today!`
     }

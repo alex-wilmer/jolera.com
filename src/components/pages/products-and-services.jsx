@@ -1,12 +1,14 @@
 import React from 'react'
 import Radium from 'radium'
 import Banner from '../banner.jsx'
+import PATH from '../../path.jsx'
 import { greyBackground, max, smallHeader, textCenter } from '../../style/style.jsx'
 
 import { Tabs, Tab, TabPanels, TabPanel } from '../tabs.jsx'
 import ManagedServices from '../panels/managed-services.jsx'
 import CloudServices from '../panels/cloud-services.jsx'
 import ProfessionalServices from '../panels/professional-services.jsx'
+
 
 @Radium
 export default class ProductsAndServices extends React.Component {
@@ -52,17 +54,17 @@ export default class ProductsAndServices extends React.Component {
 
         <Tabs activeTab={ this.state.activeTab } onSelect={ this.selectTab }>
           <Tab>
-            <img style={ { marginBottom: `20px` } } src='img/icons/fork-knife-medium.png' />
+            <img style={ { marginBottom: `20px` } } src={ `${ PATH }/img/icons/fork-knife-medium.png` } />
             <div>Managed Services</div>
           </Tab>
 
           <Tab>
-            <img style={ { marginBottom: `20px` } } src='img/icons/cloud-medium.png' />
+            <img style={ { marginBottom: `20px` } } src={ `${ PATH }/img/icons/cloud-medium.png` } />
             <div>Cloud Services</div>
           </Tab>
 
           <Tab>
-            <img style={ { marginBottom: `20px` } } src='img/icons/headset-medium.png' />
+            <img style={ { marginBottom: `20px` } } src={ `${ PATH }/img/icons/headset-medium.png` } />
             <div>Professional Services</div>
           </Tab>
         </Tabs>

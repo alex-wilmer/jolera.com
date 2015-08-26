@@ -3,6 +3,7 @@ import Radium from 'radium'
 import HomeTile from './home-tile.jsx'
 import { SPACING, BLUE } from '../style/style-consts.jsx'
 import assign from 'object-assign'
+import PATH from '../path.jsx'
 
 @Radium
 export default class HomeTiles extends React.Component {
@@ -37,10 +38,10 @@ export default class HomeTiles extends React.Component {
       : style.wrapper
 
     const tiles = [
-        { text: 'PRODUCTS AND SERVICES', link: '/', img: `img/icons/fork-knife.png` }
-      , { text: 'ABOUT US', link: '/', img: `img/icons/avatar.png` }
-      , { text: 'PRESS', link: '/', img: `img/icons/news.png` }
-      , { text: 'SOCIAL RESPONSIBILITY', link: '/', img: `img/icons/leaf.png` }
+        { text: 'PRODUCTS AND SERVICES', link: '/', img: `${ PATH }/img/icons/fork-knife.png` }
+      , { text: 'ABOUT US', link: '/', img: `${ PATH }/img/icons/avatar.png` }
+      , { text: 'PRESS', link: '/', img: `${ PATH }/img/icons/news.png` }
+      , { text: 'SOCIAL RESPONSIBILITY', link: '/', img: `${ PATH }/img/icons/leaf.png` }
     ]
 
     const topTiles = tiles.filter((info, i) => i < 2).map(mapTile)

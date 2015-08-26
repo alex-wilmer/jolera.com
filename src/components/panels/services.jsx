@@ -68,8 +68,8 @@ export default class Services extends React.Component {
     }
 
     const accordionHeight = {
-      open: { maxHeight: `20%` }
-    , closed: { maxHeight: `0%` }
+      open: { maxHeight: `250px` }
+    , closed: { maxHeight: `0px` }
     }
 
     const accordionItems = data.accordion.map((m, i) => {
@@ -123,12 +123,10 @@ export default class Services extends React.Component {
     const arr = this.state.activeItemIndexes.slice()
     const index = arr.indexOf(i)
     if (index > -1) {
-      console.log('added')
       this.setState({ activeItemIndexes:
         [ ...arr.slice(0, index), ...arr.slice(index + 1, arr.length)] })
     }
     else {
-      console.log('removed')
       arr.push(i)
       this.setState({ activeItemIndexes: arr })
     }
