@@ -8,23 +8,16 @@ import { BLUE, BABY_BLUE } from '../../style/style-consts.jsx'
 @Radium
 export default class Press extends React.Component {
   render () {
-    const img = 'https://www.petfinder.com/wp-content/uploads/2012/11/140272627-grooming-needs-senior-cat-632x475.jpg'
+    const img =
+      'http://tributevideo.com/fslides/slides/photography/tribute_video_photography_slides34.jpg'
+
     const one = {
-      title: `yar1`,
-      text: `nar1`,
+      title: `Article Title`,
+      text: `lorem ipsum..`,
       image: img
     }
-    const two = {
-      title: `yar2`,
-      text: `nar2`,
-      image: img
-    }
-    const three = {
-      title: `yar3`,
-      text: `nar3`,
-      image: img
-    }
-    const tiles = [ one, two, three, one, two, three, one, two, three ]
+
+    const tiles = [ one, one, one, one ]
 
     const xTileDivPadding = 30
     const gutterPadding = 1

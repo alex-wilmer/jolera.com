@@ -3,7 +3,9 @@ import Radium from 'radium'
 import assign from 'object-assign'
 import Banner from '../banner.jsx'
 import {
-  blueBackground
+  button
+, babyBlue
+, blueBackground
 , greyBackground
 , smallHeader
 , max
@@ -29,7 +31,9 @@ export default class About extends React.Component {
     const text = {
       banner: {
         big: `About Us`
-      , small: `Lorem ipsum..`
+      , small:
+          `Our international coverage and 365x24x7 accessibility mean we are
+          always there for you!`
       }
     , main: {
         header: `Digging deep to assure your complete satisfaction`
@@ -62,7 +66,7 @@ export default class About extends React.Component {
 
     return (
       <div style={ [greyBackground, this.props.footerMargin] }>
-        <Banner text={ text.banner } image='img/bg1.png' wide={ this.props.wide } />
+        <Banner text={ text.banner } image='img/laptop-balance.jpg' wide={ this.props.wide } />
 
         <div style={ [max, padding] }>
           <div style={ [smallHeader, textCenter] }>{ text.main.header }</div>
@@ -92,6 +96,9 @@ export default class About extends React.Component {
           </TabPanel>
         </TabPanels>
 
+        <div style={ textCenter }>
+          <a style={ [button, babyBlue] }>JOIN OUR TEAM!</a>
+        </div>
         <LearnMore />
       </div>
     )

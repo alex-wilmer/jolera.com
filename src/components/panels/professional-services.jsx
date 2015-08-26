@@ -45,21 +45,7 @@ export default class ProfessionalServices extends React.Component {
         </div>
 
         <div style={ [max, { padding: `20px` }] }>
-          <p>Honesty and Integrity</p>
-
-          <div>At Jolera we believe in:</div>
-
-          <ul>
-            <li>Teamwork, through diverse expertise, personal initiative and group collaboration</li>
-            <li>Business Relationships, built on trust, integrity and honour</li>
-            <li>Accountability, based on strong communication</li>
-            <li>Transparency and acceptance of responsibility</li>
-            <li>Citizenship - Helping our friends, neighbours and community</li>
-          </ul>
-
-          <div style={ textCenter }>
-            <a style={ [button, babyBlue] }>JOIN OUR TEAM!</a>
-          </div>
+        
         </div>
       </div>
     )

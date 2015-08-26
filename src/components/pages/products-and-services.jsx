@@ -51,9 +51,20 @@ export default class ProductsAndServices extends React.Component {
         </div>
 
         <Tabs activeTab={ this.state.activeTab } onSelect={ this.selectTab }>
-          <Tab>Managed Services</Tab>
-          <Tab>Cloud Services</Tab>
-          <Tab>Professional Services</Tab>
+          <Tab>
+            <img style={ { marginBottom: `20px` } } src='img/icons/fork-knife-medium.png' />
+            <div>Managed Services</div>
+          </Tab>
+
+          <Tab>
+            <img style={ { marginBottom: `20px` } } src='img/icons/cloud-medium.png' />
+            <div>Cloud Services</div>
+          </Tab>
+
+          <Tab>
+            <img style={ { marginBottom: `20px` } } src='img/icons/headset-medium.png' />
+            <div>Professional Services</div>
+          </Tab>
         </Tabs>
 
         <TabPanels activeTab={ this.state.activeTab }>

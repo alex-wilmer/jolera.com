@@ -25,8 +25,8 @@ export default class CustomerPortals extends React.Component {
     const data = {
       blueHeader: `Adding value and providing full transparency`
     , blueParagraph:
-        `Jolera is fully committed to providing online access and reporting 
-        on all our services. You will always know what's happening! No 
+        `Jolera is fully committed to providing online access and reporting
+        on all our services. You will always know what's happening! No
         Suprises, Ever!  Our online experience options include:`
     }
 
@@ -45,7 +45,9 @@ export default class CustomerPortals extends React.Component {
           </div>
         </div>
 
-        <div> ACCORDIONS </div>
+        <div style={ max }>
+
+        </div>
       </div>
     )
   }

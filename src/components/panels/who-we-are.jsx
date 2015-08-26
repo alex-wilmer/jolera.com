@@ -60,10 +60,6 @@ export default class WhoWeAre extends React.Component {
             <li>Transparency and acceptance of responsibility</li>
             <li>Citizenship - Helping our friends, neighbours and community</li>
           </ul>
-
-          <div style={ textCenter }>
-            <a style={ [button, babyBlue] }>JOIN OUR TEAM!</a>
-          </div>
         </div>
       </div>
     )

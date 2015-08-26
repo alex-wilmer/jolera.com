@@ -79,9 +79,10 @@ export default class ContactUs extends React.Component {
 
               <hr style={ margin } />
 
+              <ContactForm />
+              
               <div style={ office }>{ officeInfo }</div>
 
-              <ContactForm />
             </div>
           </div>
         </div>

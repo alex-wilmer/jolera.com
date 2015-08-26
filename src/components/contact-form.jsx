@@ -9,6 +9,7 @@ export default class ContactForm extends React.Component {
       padding: `20px`
     , fontSize: `1.2em`
     , width: `100%`
+    , border: `1px solid rgb(153, 153, 153)`
     , '@media (min-width: 800px)': {
         width: `480px`
       , display: `block`

@@ -1,5 +1,5 @@
 import React from 'react'
-import { H2, HEADER_HEIGHT } from '../style/style-consts.jsx'
+import { H2, H4, HEADER_HEIGHT } from '../style/style-consts.jsx'
 
 export default class Banner {
   render () {
@@ -18,11 +18,16 @@ export default class Banner {
     , transform: `translateY(-50%)`
     }
 
+    const smallText = {
+      marginTop: `20px`
+    , fontSize: `${ H4 }em`
+    }
+
     return (
       <div style={ style }>
         <div style={ center }>
           <div style={ { fontSize: `${ H2 }em` } }>{ this.props.text.big }</div>
-          <div style={ { marginTop: `20px` }  }>{ this.props.text.small }</div>
+          <div style={ smallText }>{ this.props.text.small }</div>
         </div>
       </div>
     )

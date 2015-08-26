@@ -33,7 +33,7 @@ export default class PrivacyPolicy extends React.Component {
 
         <div style={ [style.contentPadding, max] }>
           <div style={ style.mainText }>
-            <div>Jolera takes partnerships seriously. We work closely with infustry innovators to achieve the critical mass...</div>
+            <div>Jolera takes partnerships seriously. We work closely with industry innovators to achieve the critical mass...</div>
           </div>
         </div>
 

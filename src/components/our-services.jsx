@@ -13,7 +13,7 @@ export default class OurServices extends React.Component {
 
     let tileBaseStyle = {
       width: this.props.wide ? `calc(33.33% - ${ SPACING - 6 }px) ` : `300px`
-    , height: this.props.wide ? `calc(33.33% - ${ SPACING - 6 }px) ` : `300px`
+    , minHeight: this.props.wide ? `295px` : `300px`
     , backgroundColor: `white`
     , padding: `20px`
     , color: `${ BLUE }`
