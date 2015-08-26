@@ -60,8 +60,6 @@ export default class ContactUs extends React.Component {
       return <div>{ data.officeInfo[key] }</div>
     })
 
-
-
     return (
       <div style={ [this.props.footerMargin, greyBackground] }>
         <iframe width="600" height="450" frameborder="0" style={ mapStyle } src="https://www.google.com/maps/embed/v1/place?q=777%20Richmond%20Street%20West%2C%20Toronto%2C%20ON%2C%20Canada&key=AIzaSyDJ9ME7by5XGppz_Il4XAvZ_3raMoig0Jg" allowfullscreen></iframe>
@@ -79,10 +77,10 @@ export default class ContactUs extends React.Component {
 
               <hr style={ margin } />
 
-              <ContactForm />
-              
-              <div style={ office }>{ officeInfo }</div>
-
+              <div className='clearfix'>
+                <ContactForm wide={ this.props.wide } />
+                <div style={ office }>{ officeInfo }</div>
+              </div>
             </div>
           </div>
         </div>

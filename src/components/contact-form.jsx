@@ -29,7 +29,7 @@ export default class ContactForm extends React.Component {
     }
 
     return (
-      <div>
+      <div style={ this.props.wide ? { float: `left` } : '' } >
         <input key='1' placeholder='I have a message for..' style={ inputStyle } />
         <input key='2' placeholder='* First name' style={ [inputStyle, marginTop] } />
         <input key='3' placeholder='* Last name' style={ [inputStyle, marginTop] } />
