@@ -105,9 +105,6 @@ export default class ContactUs extends React.Component {
             <CustomerPortals />
           </TabPanel>
         </TabPanels>
-
-        <LearnMore />
-
       </div>
     )
   }

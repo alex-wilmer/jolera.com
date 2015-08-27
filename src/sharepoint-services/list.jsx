@@ -23,18 +23,26 @@ const getItems = (listName, options, items) => {
   , { headers }
   )
     .then(response => {
-
       const data = JSON.parse(response.response)
       items = items.concat(data.d.results)
-
-      // if (response.data.d.__next && !options.top) {
-      //   return getItemsByUrl(response.data.d.__next, items)
-      // }
-
-      // else return items
-
       return items
     })
 }
 
-export { getItems }
+const insertItem = (listName, data, callback) => {
+  SP.SOD.executeFunc(`sp.js`, `SP.ClientContext`, () => {
+    const context = SP.ClientContext.get_current()
+    const list = context.get_web().get_lists().getByTitle(listName)
+    const item = list.addItem(new SP.ListItemCreationInformation())
+    for (let prop in data) {
+      item.set_item(prop, data[prop])
+    }
+    item.update()
+    context.executeQueryAsync(
+      () => callback(item.get_id())
+    , () => callback('fail!')
+    )
+  })
+}
+
+export { getItems, insertItem }

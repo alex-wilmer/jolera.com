@@ -8,7 +8,7 @@ export default class Banner {
       backgroundImage: `url(${ PATH }/${ this.props.image })`
     , backgroundSize: `cover`
     , backgroundPosition: `center center`
-    , height: this.props.wide ? `380px` : `calc(100% - ${ HEADER_HEIGHT }px)`
+    , height: this.props.wide ? `380px` : `calc(100vh - ${ HEADER_HEIGHT }px)`
     , textAlign: `center`
     , color: `white`
     }

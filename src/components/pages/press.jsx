@@ -56,32 +56,22 @@ export default class Press extends React.Component {
       }
     }
 
-    // const tilediv = this.state.articles.map((t, i) => {
-    //   return (
-    //     <div style={ style.tile }>
-    //       <div key={ i } style={ style.innerTile }>
-    //         <div><img src={ t.image } style={ style.img } /></div>
-    //         <div style={ style.textBox }>
-    //           <div style={ style.heading }>{ t.title }</div>
-    //           <div style={ style.description }>{ t.text }</div>
-    //           <div style={ style.readMore }>Read More</div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   )
-    // })
+    const tilediv = this.state.articles.map((t, i) => {
+      console.log(t)
 
-
-      const tilediv = this.state.articles.map((t, i) => {
-        return (
-          <div style={ style.tile }>
-            <div key={ i } style={ style.innerTile }>
-              <div>{ t.Title }</div>
+      return (
+        <div style={ style.tile }>
+          <div key={ i } style={ style.innerTile }>
+            <div><img src={ t.Thumbnail.Url } style={ style.img } /></div>
+            <div style={ style.textBox }>
+              <div style={ style.heading }>{ t.Title }</div>
+              <div style={ style.description }>{ t.Subtitle }</div>
+              <div style={ style.readMore }>Read More</div>
             </div>
           </div>
-        )
-      })
-    
+        </div>
+      )
+    })
 
     const bannerText = {
       big: `Featured Article`

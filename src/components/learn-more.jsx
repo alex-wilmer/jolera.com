@@ -29,7 +29,7 @@ export default class LearnMore extends React.Component {
             If you would like to learn more about our products and services
           </div>
 
-          <a style={ [button, orange] }>CONTACT US</a>
+          <a href='#/contact-us' style={ [button, orange] }>CONTACT US</a>
         </div>
       </div>
     )

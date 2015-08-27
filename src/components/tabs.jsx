@@ -42,6 +42,7 @@ class Tab extends React.Component {
       , display: `inline-block`
       , width: `33.33%`
       , borderBottom: `10px solid white`
+      , verticalAlign: `top`
       }
     }
 
@@ -56,7 +57,7 @@ class Tab extends React.Component {
     return (
       <a
         onClick={ this.props.onSelect.bind(this, this.props.index) }
-        style={ [tabStyle, textCenter] }>
+        style={ [tabStyle, textCenter, this.props.minHeight] }>
         { this.props.children }
       </a>
     )

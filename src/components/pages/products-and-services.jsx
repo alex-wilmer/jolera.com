@@ -53,17 +53,17 @@ export default class ProductsAndServices extends React.Component {
         </div>
 
         <Tabs activeTab={ this.state.activeTab } onSelect={ this.selectTab }>
-          <Tab>
+          <Tab minHeight={{ minHeight: `257px` }}>
             <img style={ { marginBottom: `20px` } } src={ `${ PATH }/img/icons/fork-knife-medium.png` } />
             <div>Managed Services</div>
           </Tab>
 
-          <Tab>
+          <Tab minHeight={{ minHeight: `257px` }}>
             <img style={ { marginBottom: `20px` } } src={ `${ PATH }/img/icons/cloud-medium.png` } />
             <div>Cloud Services</div>
           </Tab>
 
-          <Tab>
+          <Tab minHeight={{ minHeight: `257px` }}>
             <img style={ { marginBottom: `20px` } } src={ `${ PATH }/img/icons/headset-medium.png` } />
             <div>Professional Services</div>
           </Tab>

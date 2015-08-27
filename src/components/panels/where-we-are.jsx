@@ -110,7 +110,7 @@ export default class WhereWeAre extends React.Component {
           </div>
         </div>
 
-        <div style={ max }>
+        <div style={ [max, { padding: `20px` }] }>
           { accordionItems }
         </div>
       </div>

@@ -11,7 +11,7 @@ export default class HomeHero {
       backgroundImage: `url(${ PATH }/img/homehero.jpg)`
     , backgroundSize: `cover`
     , backgroundPosition: `center center`
-    , height:  this.props.wide ? `380px` : `calc(100% - ${ HEADER_HEIGHT }px)`
+    , height:  this.props.wide ? `380px` : `calc(100vh - ${ HEADER_HEIGHT }px)`
     , padding: SPACING
     , position: `relative`
     }

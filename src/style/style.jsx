@@ -8,12 +8,12 @@ export default {
   , margin: `0 auto`
   }
 
-, header: assign({}, {
-      backgroundColor: consts.BLUE
-    , color: `white`
-    , padding: `0 ${ consts.SPACING }px`
-    }
-  , mixins.trueHeight(consts.HEADER_HEIGHT))
+, header: {
+    height: `${ consts.HEADER_HEIGHT }px`
+  , backgroundColor: consts.BLUE
+  , color: `white`
+  , padding: `0 ${ consts.SPACING }px`
+  }
 
 , footer: {
     position: `fixed`
@@ -78,5 +78,11 @@ export default {
 
 , babyBlueGradient: {
     background: `linear-gradient(to bottom, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%)`
+  }
+
+, accordionContentBaseStyle: {
+    marginTop: `20px`
+  , overflow: `hidden`
+  , transition: `max-height 0.3s ease-in-out`
   }
 }

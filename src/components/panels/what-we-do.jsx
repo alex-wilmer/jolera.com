@@ -2,7 +2,8 @@ import React from 'react'
 import Radium from 'radium'
 import assign from 'object-assign'
 import {
-  blueBackground
+  accordionContentBaseStyle
+, blueBackground
 , max
 , textCenter
 , smallHeader
@@ -63,12 +64,6 @@ export default class WhatWeDo extends React.Component {
       ]
     }
 
-    const accordionContentBaseStyle = {
-      marginTop: `20px`
-    , overflow: `hidden`
-    , transition: `max-height 0.3s ease-in-out`
-    }
-
     const accordionHeight = {
       open: { maxHeight: `250px` }
     , closed: { maxHeight: `0px` }
@@ -114,7 +109,7 @@ export default class WhatWeDo extends React.Component {
           </div>
         </div>
 
-        <div style={ max }>
+        <div style={ [max, { padding: `20px` }] }>
           { accordionItems }
         </div>
       </div>
