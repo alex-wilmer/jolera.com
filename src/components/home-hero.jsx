@@ -1,9 +1,20 @@
+// Dependencies
+
 import React from 'react'
 import assign from 'object-assign'
+
+// Style
+
 import { SPACING, HEADER_HEIGHT } from '../style/style-consts.jsx'
 import { max } from '../style/style.jsx'
-import HomeTiles from './home-tiles.jsx'
+
+// Path to application folder
+
 import PATH from '../path.jsx'
+
+// Components
+
+import HomeTiles from './home-tiles.jsx'
 
 export default class HomeHero {
   render () {

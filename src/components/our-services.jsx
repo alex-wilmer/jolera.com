@@ -1,8 +1,16 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
 import assign from 'object-assign'
+
+// Style
+
 import { SPACING, BLUE } from '../style/style-consts.jsx'
 import { textCenter, smallHeader, button, babyBlue } from '../style/style.jsx'
+
+// Path to application folder
+
 import PATH from '../path.jsx'
 
 @Radium

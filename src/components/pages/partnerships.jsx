@@ -1,8 +1,24 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
-import Banner from '../banner.jsx'
+
+// Style
+
 import { SPACING, GREY } from '../../style/style-consts.jsx'
-import { smallHeader, footerMargin, greyBackground, smallSubHeader, max, contentPadding, textCenter } from '../../style/style.jsx'
+import {
+  smallHeader
+, footerMargin
+, greyBackground
+, smallSubHeader
+, max
+, contentPadding
+, textCenter
+} from '../../style/style.jsx'
+
+// Components
+
+import Banner from '../banner.jsx'
 import Carousel from './../carousel.jsx'
 import LearnMore from '../learn-more.jsx'
 

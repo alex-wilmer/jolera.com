@@ -1,6 +1,11 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
 import Slider from 'react-slick'
+
+// Style
+
 import { posY } from '../style/style-mixins.jsx'
 
 @Radium
@@ -16,13 +21,6 @@ export default class Carousel extends React.Component {
     , slidesToScroll: 1
     }
 
-    const data = [
-      { img: `http://www.microsoft.com/indonesia/events/lightup/Images/Microsoft_Logo.png` }
-    , { img: `http://www.microsoft.com/indonesia/events/lightup/Images/Microsoft_Logo.png` }
-    , { img: `http://www.microsoft.com/indonesia/events/lightup/Images/Microsoft_Logo.png` }
-    , { img: `http://www.microsoft.com/indonesia/events/lightup/Images/Microsoft_Logo.png` }
-    ]
-
     const imgStyle = {
       maxWidth: `100px`
     , margin: `0 auto`
@@ -34,13 +32,14 @@ export default class Carousel extends React.Component {
 
     return (
       <Slider { ...settings }>
-        { data.map(n => {
+        { this.props.data &&
+          this.props.data.map(n => {
             return (
               <a style={ linkStyle }>
                 <img style={ [imgStyle, posY(50)] } src={ n.img } />
               </a>
             )
-          }) }
+          }) || <div>You forgot to put content!</div> }
       </Slider>
     )
   }

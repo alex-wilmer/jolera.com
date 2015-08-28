@@ -1,9 +1,16 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
+
+// Style
+
 import { max, greyBackground, textCenter, smallHeader } from '../../style/style.jsx'
-import ContactForm from '../contact-form.jsx'
+
+// Components
 
 import { Tabs, Tab, TabPanels, TabPanel } from '../tabs.jsx'
+import ContactForm from '../contact-form.jsx'
 import LearnMore from '../learn-more.jsx'
 import Sales from '../panels/sales.jsx'
 import Services from '../panels/services.jsx'

@@ -1,6 +1,12 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
 import assign from 'object-assign'
+
+// Style
+
+import { BABY_BLUE } from '../../style/style-consts.jsx'
 import {
   blueBackground
 , max
@@ -9,8 +15,6 @@ import {
 , button
 , babyBlue
 } from '../../style/style.jsx'
-
-import { BABY_BLUE } from '../../style/style-consts.jsx'
 
 @Radium
 export default class WhereWeAre extends React.Component {

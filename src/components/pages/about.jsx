@@ -1,7 +1,11 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
 import assign from 'object-assign'
-import Banner from '../banner.jsx'
+
+// Style
+
 import {
   button
 , babyBlue
@@ -12,7 +16,10 @@ import {
 , textCenter } from '../../style/style.jsx'
 import { BABY_BLUE } from '../../style/style-consts.jsx'
 
+// Components
+
 import { Tabs, Tab, TabPanels, TabPanel } from '../tabs.jsx'
+import Banner from '../banner.jsx'
 import LearnMore from '../learn-more.jsx'
 import WhoWeAre from '../panels/who-we-are.jsx'
 import WhatWeDo from '../panels/what-we-do.jsx'

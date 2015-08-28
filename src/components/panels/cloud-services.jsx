@@ -1,6 +1,12 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
 import assign from 'object-assign'
+
+// Style
+
+import { BABY_BLUE } from '../../style/style-consts.jsx'
 import {
   accordionContentBaseStyle
 , blueBackground
@@ -11,7 +17,8 @@ import {
 , babyBlue
 } from '../../style/style.jsx'
 
-import { BABY_BLUE } from '../../style/style-consts.jsx'
+// SharePoint Services
+
 import { getItems } from '../../sharepoint-services/list.jsx'
 
 @Radium

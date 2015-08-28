@@ -1,6 +1,13 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
+
+// Style
+
 import { button, babyBlue } from '../style/style.jsx'
+
+// Sharepint Services
 
 import { insertItem } from '../sharepoint-services/list.jsx'
 

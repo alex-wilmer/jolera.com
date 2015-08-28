@@ -1,6 +1,7 @@
 // Dependencies
 
 import React from 'react'
+import Radium from 'radium'
 import assign from 'object-assign'
 
 // Style
@@ -8,24 +9,39 @@ import assign from 'object-assign'
 import { footer, max } from '../style/style.jsx'
 import { FOOTER_HEIGHT, SPACING } from '../style/style-consts.jsx'
 
-export default class Footer {
+@Radium
+export default class Footer extends React.Component {
   render () {
     const data = {
       mainLinks: [{
         header: `Home`
+      , path: `#/`
       , subLinks: [`Awards`, `Mission`, `About Us`, `Contact`]
       }, {
         header: `Products`
-      , subLinks: [`Awards`, `Mission`, `Contact`, `Contact`]
+      , path: `#/products-and-services`
+      , subLinks:
+      [ `Support I.T.`
+      , `Monitor I.T.`
+      , `Manage I.T.`
+      , `Share I.T.`
+      , `Block I.T.` ]
       }, {
         header: `Services`
-      , subLinks: [`Awards`, `Mission`, `Contact`, `Contact`]
+      , subLinks: [`Professional`, `Helpdesk`, `Managed`, `Development`, `Cloud`]
       }, {
         header: `Solutions`
-      , subLinks: [`Awards`, `Mission`, `Contact`, `Contact`]
+      , path: `#/`
+      , subLinks:
+      [ `Virtualization`
+      , `The Virtual Office`
+      , `Unified Communications`
+      , `SharePoint Development`
+      , `User Provisioning` ]
       }, {
         header: `Industries`
-      , subLinks: [`Awards`, `Mission`, `Contact`, `Contact`]
+      , path: `#/partnerships`
+      , subLinks: [`Non-Profit`, `Small Business`, `Mid Market`, `Enterprise`]
       }]
 
     , socialLinks: [
@@ -92,19 +108,17 @@ export default class Footer {
     const bottomLineStyle = {
       color: `grey`
     , textAlign: `center`
-    , padding: `40px 10px`
+    , padding: this.props.wide ? `40px` : `0 20px 20px`
     }
 
     const bottomLinkStyle = {
       color: `grey`
     }
 
-    const bottomLineFontSize = ( this.props.wide ? {} : { fontSize: `130%` } )
-
     const mainLinks = data.mainLinks.map((l, i) => {
       return (
         <div key={ i } style={ this.props.wide ? linkStyleWide : linkStyle }>
-          <a style={ headerLinkStyle }>{ l.header }</a>
+          <a href={ l.path } style={ headerLinkStyle }>{ l.header }</a>
           { this.props.wide ? l.subLinks.map(sl => <a style={ subLinkStyle }>{ sl }</a>) : null }
         </div>
       )
@@ -126,8 +140,8 @@ export default class Footer {
 
     const bottomLine = data.bottomLine.map((l, i) => {
       return (
-        <span style={ bottomLineFontSize }>
-          <a key={ i } href={ l.link } style={ bottomLinkStyle }>{ l.text }</a>
+        <span key={ i } style={ [this.props.wide || { fontSize: `1.3em`, lineHeight: `1.5em` }] }>
+          <a href={ l.link } style={ bottomLinkStyle }>{ l.text }</a>
           { i !== data.bottomLine.length - 1 ? <span> | </span> : '' }
         </span>
       )

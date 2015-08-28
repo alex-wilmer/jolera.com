@@ -31,6 +31,7 @@ import Search from './components/pages/search.jsx'
 import TermsAndConditions from './components/pages/terms-and-conditions.jsx'
 import PrivacyPolicy from './components/pages/privacy-policy.jsx'
 import SiteMap from './components/pages/site-map.jsx'
+import Careers from './components/pages/careers.jsx'
 import NotFound from './components/pages/not-found.jsx'
 
 const routes = (
@@ -45,6 +46,7 @@ const routes = (
     <Route path='/terms-and-conditions' handler={ TermsAndConditions } />
     <Route path='/privacy-policy' handler={ PrivacyPolicy } />
     <Route path='/site-map' handler={ SiteMap } />
+    <Route path='/careers' handler={ Careers } />
     <DefaultRoute handler={ Home } />
     <NotFoundRoute handler={ NotFound } />
   </Route>

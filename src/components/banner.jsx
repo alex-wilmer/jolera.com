@@ -1,5 +1,13 @@
+// Dependencies
+
 import React from 'react'
+
+// Style
+
 import { H2, H4, HEADER_HEIGHT } from '../style/style-consts.jsx'
+
+// Path to application folder
+
 import PATH from '../path.jsx'
 
 export default class Banner {
@@ -11,6 +19,7 @@ export default class Banner {
     , height: this.props.wide ? `380px` : `calc(100vh - ${ HEADER_HEIGHT }px)`
     , textAlign: `center`
     , color: `white`
+    , padding: `20px`
     }
 
     const center = {

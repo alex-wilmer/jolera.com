@@ -1,14 +1,23 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
-import Banner from '../banner.jsx'
-import PATH from '../../path.jsx'
+
+// Style
+
 import { greyBackground, max, smallHeader, textCenter } from '../../style/style.jsx'
 
+// Path to application folder
+
+import PATH from '../../path.jsx'
+
+// Components
+
 import { Tabs, Tab, TabPanels, TabPanel } from '../tabs.jsx'
+import Banner from '../banner.jsx'
 import ManagedServices from '../panels/managed-services.jsx'
 import CloudServices from '../panels/cloud-services.jsx'
 import ProfessionalServices from '../panels/professional-services.jsx'
-
 
 @Radium
 export default class ProductsAndServices extends React.Component {
@@ -71,8 +80,8 @@ export default class ProductsAndServices extends React.Component {
 
         <TabPanels activeTab={ this.state.activeTab }>
           <TabPanel><ManagedServices /></TabPanel>
-          <TabPanel><CloudServices /></TabPanel>
-          <TabPanel><ProfessionalServices /></TabPanel>
+          <TabPanel>{ <CloudServices /> }</TabPanel>
+          <TabPanel>{ <ProfessionalServices /> }</TabPanel>
         </TabPanels>
       </div>
     )

@@ -1,9 +1,20 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
-import HomeTile from './home-tile.jsx'
-import { SPACING, BLUE } from '../style/style-consts.jsx'
 import assign from 'object-assign'
+
+// Style
+
+import { SPACING, BLUE } from '../style/style-consts.jsx'
+
+// Path to application folder
+
 import PATH from '../path.jsx'
+
+// Components
+
+import HomeTile from './home-tile.jsx'
 
 @Radium
 export default class HomeTiles extends React.Component {

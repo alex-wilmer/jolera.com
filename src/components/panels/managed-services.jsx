@@ -1,6 +1,17 @@
+/*
+
+    TODO: need a key generator for unique keys on Radium mapped elements
+
+ */
+
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
 import assign from 'object-assign'
+
+// Styles
+
 import {
   accordionContentBaseStyle
 , blueBackground
@@ -12,6 +23,8 @@ import {
 } from '../../style/style.jsx'
 
 import { BABY_BLUE } from '../../style/style-consts.jsx'
+
+// SharePoint Services
 
 import { getItems } from '../../sharepoint-services/list.jsx'
 
@@ -71,11 +84,11 @@ export default class ManagedServices extends React.Component {
         <div key={ i }>
           { i ? <hr /> : `` }
 
-          <a className='clearfix' onClick={ this.selectItem.bind(this, i) }>
-            <img src={ m.Logo.Url } style={{ float: `left`, paddingRight: `50px` }} />
+          <a key={ i } className='clearfix' onClick={ this.selectItem.bind(this, i) }>
+            { m.Logo && <img src={ m.Logo.Url } style={{ float: `left`, paddingRight: `50px` }} /> }
             <div style={ smallHeader }>{ m.Title }</div>
             <div style={ { float: `left` } }>{ m.Slogan }</div>
-            <i style={ [
+            <i key={ i } style={ [
               { float: `right`, transition: `transform 0.3s ease` }
             , this.state.activeItemIndexes.indexOf(i) > -1
               ? { transform: `rotate(180deg)` }
@@ -83,16 +96,17 @@ export default class ManagedServices extends React.Component {
             ] } className='fa fa-chevron-down' />
           </a>
 
-          <div style={ [
+          <div key={ i + 10000 } style={ [
             accordionContentBaseStyle
           , this.state.activeItemIndexes.indexOf(i) > -1
               ? accordionHeight.open : accordionHeight.closed
           ] }>
             <div dangerouslySetInnerHTML={{ __html: m.Description }}></div>
 
-            <a href={ m.CTA_Button.Url } style={ [button, babyBlue] }>
+            { m.CTA_Button &&
+            <a key={ i + 50000 } href={ m.CTA_Button.Url } style={ [button, babyBlue] }>
               { m.CTA_Button.Description }
-            </a>
+            </a> }
           </div>
         </div>
       )

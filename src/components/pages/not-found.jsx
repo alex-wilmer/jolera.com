@@ -1,5 +1,10 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
+
+// Style
+
 import { footerMargin, greyBackground, textCenter } from '../../style/style.jsx'
 import { posY } from '../../style/style-mixins.jsx'
 import { H2 } from '../../style/style-consts.jsx'

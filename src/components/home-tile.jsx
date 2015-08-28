@@ -1,6 +1,11 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
 import { Link } from 'react-router'
+
+// Style
+
 import { babyBlueGradient } from '../style/style.jsx'
 
 @Radium

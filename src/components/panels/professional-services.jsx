@@ -1,6 +1,12 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
 import assign from 'object-assign'
+
+// Style
+
+import { BABY_BLUE } from '../../style/style-consts.jsx'
 import {
   accordionContentBaseStyle
 , blueBackground
@@ -11,7 +17,8 @@ import {
 , babyBlue
 } from '../../style/style.jsx'
 
-import { BABY_BLUE } from '../../style/style-consts.jsx'
+// SharePoint Services
+
 import { getItems } from '../../sharepoint-services/list.jsx'
 
 @Radium
@@ -68,7 +75,7 @@ export default class ProfessionalServices extends React.Component {
             <img src={ m.Logo.Url } style={{ float: `left`, paddingRight: `50px` }} />
             <div style={ smallHeader }>{ m.Title }</div>
             <div style={ { float: `left` } }>{ m.Slogan }</div>
-            <i style={ [
+            <i key={ i + 10000 } style={ [
               { float: `right`, transition: `transform 0.3s ease` }
             , this.state.activeItemIndexes.indexOf(i) > -1
               ? { transform: `rotate(180deg)` }
@@ -76,7 +83,7 @@ export default class ProfessionalServices extends React.Component {
             ] } className='fa fa-chevron-down' />
           </a>
 
-          <div style={ [
+          <div key={ i + 5000 } style={ [
             accordionContentBaseStyle
           , this.state.activeItemIndexes.indexOf(i) > -1
               ? accordionHeight.open : accordionHeight.closed

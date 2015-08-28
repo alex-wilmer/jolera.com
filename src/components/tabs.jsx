@@ -1,6 +1,11 @@
+// Dependencies
+
 import React from 'react/addons'
 import Radium from 'radium'
 import assign from 'object-assign'
+
+// Style
+
 import { ORANGE } from '../style/style-consts.jsx'
 import { textCenter, blueBackground, max } from '../style/style.jsx'
 

@@ -1,5 +1,10 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
+
+// Style
+
 import { babyBlueGradient, button, orange } from '../style/style.jsx'
 
 @Radium

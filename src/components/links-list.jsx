@@ -1,9 +1,14 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
 import assign from 'object-assign'
+import { Link } from 'react-router'
+
+// Style
+
 import { BLUE, ORANGE, SPACING, HEADER_HEIGHT } from '../style/style-consts.jsx'
 import { posY } from '../style/style-mixins.jsx'
-import { Link } from 'react-router'
 
 @Radium
 export default class LinksList extends React.Component {

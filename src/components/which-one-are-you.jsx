@@ -1,7 +1,14 @@
+// Dependencies
+
 import React from 'react'
+import assign from 'object-assign'
+
+// Style
+
 import { SPACING, H2 } from '../style/style-consts.jsx'
 import { smallHeader } from '../style/style.jsx'
-import assign from 'object-assign'
+
+// Components
 
 import WhichOneAreYouTile from './which-one-are-you-tile.jsx'
 

@@ -1,11 +1,28 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
-import Banner from '../banner.jsx'
-import LearnMore from '../learn-more.jsx'
-import { footerMargin, max, greyBackground, button, babyBlue, textCenter } from '../../style/style.jsx'
+
+// Style
+
 import { BLUE, BABY_BLUE } from '../../style/style-consts.jsx'
+import {
+  footerMargin
+, max
+, greyBackground
+, button
+, babyBlue
+, textCenter
+} from '../../style/style.jsx'
+
+// Sharepoint Services
 
 import { getItems } from '../../sharepoint-services/list.jsx'
+
+// Components
+
+import Banner from '../banner.jsx'
+import LearnMore from '../learn-more.jsx'
 
 @Radium
 export default class Press extends React.Component {

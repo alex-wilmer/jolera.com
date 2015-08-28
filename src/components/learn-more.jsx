@@ -1,9 +1,17 @@
+// Dependencies
+
 import React from 'react'
-import assign from 'object-assign'
 import Radium from 'radium'
+import assign from 'object-assign'
+
+// Style
+
 import { button, orange } from '../style/style.jsx'
 import { H2 } from '../style/style-consts.jsx'
 import { pos } from '../style/style-mixins.jsx'
+
+// Path to application folder
+
 import PATH from '../path.jsx'
 
 @Radium

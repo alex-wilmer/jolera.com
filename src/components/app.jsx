@@ -22,13 +22,20 @@ import Footer from './footer.jsx'
 
 import { FOOTER_HEIGHT } from '../style/style-consts.jsx'
 
+// SharePoint Services
+
+import { getItems } from '../sharepoint-services/list.jsx'
+
 export default class App extends React.Component {
   constructor (props) {
     super(props)
 
-    this.state = { wide: ``, footerMargin: {} }
+    this.state = { wide: ``, footerMargin: {}, partners: [] }
     this.componentDidMount = this.componentDidMount.bind(this)
     this.mediaQueryChanged = this.mediaQueryChanged.bind(this)
+
+    getItems(`Partners`, { site: _spPageContextInfo.webTitle })
+      .then(data => this.setState({ partners: data }))
   }
 
   componentDidMount () {
@@ -57,7 +64,12 @@ export default class App extends React.Component {
     return (
       <div id='app'>
         <Header links={ this.props.data.links } wide={ this.state.wide } />
-        <RouteHandler wide={ this.state.wide } footerMargin={ this.state.footerMargin } />
+
+        <RouteHandler
+          wide={ this.state.wide }
+          footerMargin={ this.state.footerMargin }
+          partners={ this.state.partners } />
+
         <Footer wide={ this.state.wide } />
       </div>
     )

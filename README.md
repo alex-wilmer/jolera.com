@@ -1,10 +1,10 @@
 # jolera.com
 
-### This is an early stage work in progress!
-
 To get up and running:
 
     npm install
-    npm start
+    npm install -g webpack
+    webpack --watch
 
-Then navigate to `http://localhost:3000/`
+This will generate a `bundle.js` file in the `static` folder which should be added
+just below the closing `</body>` tag in the master page. Use `sharepoint.master` as an example / guide.

@@ -1,10 +1,23 @@
+// Dependencies
+
 import React from 'react'
 import Radium from 'radium'
-import Banner from '../banner.jsx'
-import LearnMore from '../learn-more.jsx'
+
+// Style
 
 import { SPACING } from '../../style/style-consts.jsx'
-import { smallHeader, footerMargin, greyBackground, max, textCenter } from '../../style/style.jsx'
+import {
+  smallHeader
+, footerMargin
+, greyBackground
+, max
+, textCenter
+} from '../../style/style.jsx'
+
+// Components
+
+import Banner from '../banner.jsx'
+import LearnMore from '../learn-more.jsx'
 
 @Radium
 export default class PrivacyPolicy extends React.Component {
