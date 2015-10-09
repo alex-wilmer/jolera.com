@@ -3,6 +3,8 @@
 # set -e # exit with nonzero exit code if anything fails
 
 #!/bin/bash
+echo $BRANCH
+
 if [ "$BRANCH" == "develop" ]; then
   mkdir build
   mv * build
