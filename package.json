@@ -18,6 +18,7 @@
     "webpack-dev-server": "^1.10.1"
   },
   "dependencies": {
+    "mocha": "^2.3.3",
     "object-assign": "^4.0.1",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
