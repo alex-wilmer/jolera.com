@@ -11,6 +11,6 @@ env:
   - secure: uzhRC6CGgNMHITQZ1c2bhGmQmVAmtOMpJVLuITcuE3Ic0w2eeCOmQCH9Sw14wLvOdcQRn+uUxaQbpts+RI6lXfWXz0cDUrBkw57t3WLqjgFcw86bn/r4pUTg/J7rETLXPK9vzleb25GPIC82OED5murApZJNIP7T+HyTgUYNtLchIoo1RrZF8h3Iy/fK8gIAqdNNzy3aZhTugHEYcNdVaSH73Z0EbcKrX2gomhXsOn3GEe1wLdjfON3yrGs2hT3UEBpRr32dQ3D3aXbzb5yRfWnGWTXRPG4ZDiY1f3JQETczseNEb8kUFLnOexzTPE8c7hugwef5FCxq/d8flIqRLpD/fDVywM3Gd3khV0SBfsw6igyXm4k92nl+vJyT73etO6PtGPe466dRVjy1MfSPQz6d+bqEBIm8BwplJDMymOR8AJNIf/9I/PUmuNJ6GkF6b/f9HynKk20XPd2SlxQKDX0HAwtBCMEQSiIEEWs8NioVmEpypE4vSZKWsYhKJ0ISDIEXEE155beY6d5XFCyWXiIyYB3t2TvZ5rJcV2Pbv2n70Y291SjoFlTh8JYWbZDowwQUrT8shN8OTRj3Wprh8I9LoqpUq1vp+J3G67Fo5i4BVpYDVF7Sss3B5wcMwnekVIbFKXadTsSJZkiDyQ5n6pUJWbUZXWwoES4bRmmjaIk=
 deploy:
   provider: script
-    script: deploy.sh
-    on:
-    	branch: develop
+  script: deploy.sh
+  on:
+  	branch: develop
